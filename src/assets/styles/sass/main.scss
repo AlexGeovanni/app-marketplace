@@ -1,0 +1,158 @@
+$primary: #3b37ff;
+$headings-font-family: "Playfair Display", serif;
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../../node_modules/bootstrap/scss/maps";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "./header.scss";
+@import "./auth-user.scss";
+@import "./home.scss";
+@import "./footer.scss";
+
+html,
+body {
+  background-color: rgb(248, 248, 248);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.mt-seccions-index {
+  margin-top: 75px !important;
+}
+
+.list-group  .list-group-item-action > .svg-icon{
+  pointer-events: none;
+}
+
+.btn-container input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.form__product input,
+.form__product select {
+  padding-top: 12px;
+  padding-bottom:12px;
+}
+.form__product  button{
+  padding: 12px;
+}
+label.btn {
+  width: 120px;
+  padding: 0;
+  font-size: 14px;
+
+}
+
+.container-img{
+  width: 280px;
+  max-height: 310px;
+  height: 100%;
+  & img{
+    aspect-ratio: 3/4;
+  }
+}
+
+// icons the header
+.user-icon {
+  font-size: 33px;
+  color: #000000;
+}
+.user-icon.cart {
+  font-size: 28px;
+}
+.notification__cart {
+  font-size: 9px;
+  top: 8px;
+  right: -12px;
+  padding: 3px 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+// HEADER navigation links
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  border: none;
+}
+.header-container .navbar-nav .nav-item .nav-link{
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .7px;
+  // text-transform: uppercase;
+  color: #000000;
+}
+
+.bg-white-light .navbar-nav .nav-item .nav-link{
+  color: #000000;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item{
+  // text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: .7px;
+}
+
+
+// forms 
+.form-select,
+.form-control {
+  border-color: rgba(173, 166, 166, 0.45);
+}
+.form-select:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+.form-select.is-invalid:focus,
+.form-control.is-invalid:focus{
+  box-shadow: none;
+  border-color: rgba(255, 0, 0, 0.450);
+}
+.dropdown-menu {
+  border: none;
+}
+
+// classname for cursors
+.cp {
+  cursor: pointer;
+}
+
+// cart shop styles
+.btn-delete{
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .sec  {
+    max-width: 1180px;
+    margin: auto;
+  }
+  .user-icon.cart {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 991px) {
+  // HEADER navigation links
+
+.navbar-nav .dropdown:hover  .dropdown-menu{
+  display: flex;
+}
+.navbar-nav .dropdown .dropdown-menu.show{
+  display: flex;
+}
+}
+
+

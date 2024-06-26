@@ -1,0 +1,26 @@
+
+.dropdown-menu{
+    & ul{
+        width: 100%;
+    }
+    & ul li{
+        padding-left: 0;
+        padding-right: 0;
+    }
+   
+}
+
+@media screen and (min-width: 991px) {
+    .dropdown-menu{
+        min-width: 450px ;
+        & ul{
+            width: 100%;
+        }
+        & ul li{
+            padding-left: 0;
+            padding-right: 0;
+        }
+       
+    }
+  }
+  

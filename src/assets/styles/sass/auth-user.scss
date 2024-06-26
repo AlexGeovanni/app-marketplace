@@ -1,0 +1,12 @@
+
+.auth-account{
+    min-height: 75vh;
+    & > div{
+        max-width: 480px;
+        width: 100%;
+        & form .form__btn button{
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+}
