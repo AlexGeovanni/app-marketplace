@@ -13,6 +13,7 @@ $headings-font-family: "Playfair Display", serif;
 @import "./header.scss";
 @import "./auth-user.scss";
 @import "./home.scss";
+@import "./card.scss";
 @import "./footer.scss";
 
 html,
@@ -147,7 +148,11 @@ label.btn {
 @media screen and (min-width: 991px) {
   // HEADER navigation links
 
-.navbar-nav .dropdown:hover  .dropdown-menu{
+  .navbar-nav .dropdown:v .dropdown-menu{
+    position: absolute;
+  }
+
+.navbar-nav .dropdown:hover .dropdown-menu{
   display: flex;
 }
 .navbar-nav .dropdown .dropdown-menu.show{

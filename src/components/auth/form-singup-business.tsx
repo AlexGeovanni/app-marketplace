@@ -50,15 +50,16 @@ export default function FormSingupBusiness({ changeForm }: PropsAut) {
           />
         </div>
       </div>
-      <div className="p-2 mb-2">
-        <a onClick={changeForm} href="#" className="">
-        Iniciar sesión
-        </a>
-      </div>
       <div className=" px-2 form__btn">
         <button type="submit" className="btn btn-primary w-100 ">
           Crear cuenta 
         </button>
+      </div>
+      <div className="p-2 mt-2 text-center">
+        <span>¿Ya tienes cuenta? </span>
+        <a onClick={changeForm} href="#" className="">
+          Iniciar sesión
+        </a>
       </div>
     </form>
   );

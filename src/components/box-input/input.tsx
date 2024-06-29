@@ -1,20 +1,19 @@
 
-type Props ={
-    type: string
-    placeholder: string
-    value: string
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
-export default function InputBox({type,placeholder,value}:Props) {
+
+
+export default function InputBox(props:Props) {
   return (
     <>
       <input
-        type={type}
+        type={props.type || "text"}
         className="form-control"
-        id={`floating${type}`}
-        placeholder={placeholder}
+        id={`floating${props.type}}`}
+        placeholder={props.placeholder || "ingrese el texto"}
       />
-      <label htmlFor={`floating${type}`}>{value}</label>
+      <label htmlFor={`floating${props.type}`}>{props.value}</label>
     </>
   );
 }

@@ -1,0 +1,28 @@
+
+.card{
+    overflow: hidden;
+    max-height: 450px;
+    .card-img{
+        min-height: 200px;
+        width: 100%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.header__category-body{
+    border-bottom: 1px solid #ccc;
+    & a{
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width:768px){
+    .header__category-body{
+        border:none;
+    }
+    
+}

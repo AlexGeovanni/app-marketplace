@@ -9,7 +9,7 @@ export default function Footer() {
     return (
       <>
         <footer className="footer-container">
-          <section className="sec m-auto p-3 p-md-3 py-2 px-lg-4 ">
+          <section className="sec m-auto p-4 p-md-4 py-2 px-lg-4 ">
             <div className=" d-flex justify-content-between gap-3 flex-wrap">
             <Information />
             </div>

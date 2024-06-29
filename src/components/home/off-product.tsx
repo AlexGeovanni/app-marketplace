@@ -2,10 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
-import img1 from "../../assets/imgs/man-clothes.jpeg";
-
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import CardProduct from "../card-product/card";
 export default function OffProduct() {
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -65,7 +63,7 @@ export default function OffProduct() {
           <div className="mt-4 ">
             <Swiper
               slidesPerView={
-                width < 768 ? 2 : width < 992 && width >= 768 ? 2.2 : 3.2
+                width < 768 ? 2 : width < 992 && width >= 768 ? 2.2 : 3.6
               }
               spaceBetween={width < 768 ? 6 : 10}
               loop={true}
@@ -76,26 +74,8 @@ export default function OffProduct() {
               {product.map((item) => {
                 return (
                   <SwiperSlide key={item.name}>
-                    <div className=" card-carousel rounded border border-2 ">
-                      <Link to={"/detail"} className="card-img">
-                        <img className="" src={img1} alt="" />
-                      </Link>
-                      <div className="p-2 py-3  information__card-carousel ">
-                        <Link
-                          to={"/detail"}
-                          className=" text-decoration-none m-0"
-                        >
-                          <p className="title text-truncate m-0">
-                            Sudadera para hombres solo color verde
-                          </p>
-                        </Link>
-                        <p className="mt-1 price fw-bold m-0 ">
-                          $100MXN{" "}
-                          <span className="text-danger text-decoration-line-through fw-normal">
-                            $150MXN
-                          </span>
-                        </p>
-                      </div>
+                    <div className="card-carousel rounded border border-2">
+                      <CardProduct name={item.name} />
                     </div>
                   </SwiperSlide>
                 );
