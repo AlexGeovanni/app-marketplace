@@ -5,12 +5,12 @@ import sale from "../../assets/imgs/sale.jpeg";
 export default function PopularCategorys() {
   return (
     <>
-      <section className="container-popular">
-        <div className="sec p-3 py-md-3 px-lg-4 mt-3 mt-md-5">
-          <h2 className="fs-3 fw-bold">Lo que te puede interesar</h2>
-          <div className="row g-2 mt-1 ">
+      <section className="container-popular ">
+        <div className="sec p-2 p-md-3 py-2 px-lg-4 ">
+          <h2 className="fs-4 m-0 mb-3">Lo que te puede interesar</h2>
+          <div className="row  mt-1 ">
             <div className=" col- col-md-4 ">
-              <div className="cp card-popular d-flex flex-column align-items-center rounded overflow-hidden position-relative">
+              <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={man} alt="" />
                 <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
                   Ropa de hombre
@@ -18,7 +18,7 @@ export default function PopularCategorys() {
               </div>
             </div>
             <div className=" col- col-md-4 ">
-              <div className="cp card-popular d-flex flex-column align-items-center rounded overflow-hidden position-relative">
+              <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={phone} alt="" />
                 <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
                   Celular
@@ -26,7 +26,7 @@ export default function PopularCategorys() {
               </div>
             </div>
             <div className=" col- col-md-4 ">
-              <div className="cp card-popular d-flex flex-column align-items-center rounded overflow-hidden position-relative">
+              <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={sale} alt="" />
                 <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
                   Empezar a vender

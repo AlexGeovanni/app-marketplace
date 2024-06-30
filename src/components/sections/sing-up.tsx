@@ -13,7 +13,7 @@ export default function SingUp({ changeForm }: PropsAut) {
       <div className="auth-account d-flex align-items-center justify-content-center ">
         <div className=" p-2 py-4 ">
           <div className=" mb-2 mb-lg-3 border-bottom border-2 pb-2">
-            <h2 className="fw-bold text-center">Registrate</h2>
+            <h2 className=" text-center">Registrate</h2>
           </div>
           <CheckForm check={check} ChangeCheck={ChangeCheck} />
           {

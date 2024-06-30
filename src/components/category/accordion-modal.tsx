@@ -1,11 +1,11 @@
 export default function AccordionModal() {
   return (
     <>
-      <div className="accordion" id="accordionPanelsStayOpenExample">
-        <div className="accordion-item border-0 border-bottom">
+      <div className="accordion " id="accordionPanelsStayOpenExample">
+        <div className="accordion-item border-0 border-bottom  rounded-0">
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"
+              className="accordion-button shadow-none  collapsed rounded-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseOne"
@@ -24,10 +24,10 @@ export default function AccordionModal() {
             </div>
           </div>
         </div>
-        <div className="accordion-item border-0 border-bottom">
+        <div className="accordion-item border-0 border-bottom rounded-0">
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"
+              className="accordion-button shadow-none collapsed rounded-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseTwo"
@@ -46,10 +46,10 @@ export default function AccordionModal() {
             </div>
           </div>
         </div>
-        <div className="accordion-item border-0 border-bottom">
+        <div className="accordion-item border-0 border-bottom rounded-0">
           <h2 className="accordion-header">
             <button
-              className="accordion-button collapsed"
+              className="accordion-button shadow-none collapsed rounded-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseThree"

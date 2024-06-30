@@ -57,15 +57,15 @@ export default function OffProduct() {
 
   return (
     <>
-      <section className="mt-3 mt-md-5">
+      <section className="">
         <div className="sec m-auto p-2 p-md-3 py-2 px-lg-4 ">
-          <h2 className="">Local-marketplace ofertas</h2>
-          <div className="mt-4 ">
+          <h2 className="fw-normal fs-4 m-0 mb-3 ">REBAJAS</h2>
+          <div className=" ">
             <Swiper
               slidesPerView={
                 width < 768 ? 2 : width < 992 && width >= 768 ? 2.2 : 3.6
               }
-              spaceBetween={width < 768 ? 6 : 10}
+              spaceBetween={width < 768 ? 6 : 18}
               loop={true}
               navigation={true}
               modules={[Pagination, Navigation]}
@@ -74,7 +74,7 @@ export default function OffProduct() {
               {product.map((item) => {
                 return (
                   <SwiperSlide key={item.name}>
-                    <div className="card-carousel rounded border border-2">
+                    <div className="card-p">
                       <CardProduct name={item.name} />
                     </div>
                   </SwiperSlide>

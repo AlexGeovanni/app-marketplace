@@ -11,18 +11,25 @@ export default function CardProduct({ name }: Props) {
       <Link to={"/detail"} className="card-img">
         <img className="" src={img1} alt="" />
       </Link>
-      <div className="p-2  information__card-carousel ">
+      <div className=" p-1 py-2   information__card ">
         <Link to={"/detail"} className=" text-decoration-none m-0">
-          <p className="title text-truncate m-0">
-            {name} para hombres solo color verde
+          <div>
+            <p className="title__information text-truncate m-0 fw-light">
+              {name} para hombres solo color verde
+            </p>
+          </div>
+          <p className="price fw-bold m-0 ">
+            <span className="text-danger text-decoration-line-through fw-normal me-1">
+              $150MXN
+            </span>
+            $100MXN
           </p>
         </Link>
-        <p className=" price fw-bold m-0 ">
-          $100MXN{" "}
-          <span className="text-danger text-decoration-line-through fw-normal">
-            $150MXN
-          </span>
-        </p>
+      </div>
+      <div className="btn-shop">
+        <button className="btn btn-dark w-100 rounded-0 p-1 fw-light">
+          Comprar ahora
+        </button>
       </div>
     </>
   );

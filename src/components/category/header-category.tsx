@@ -1,13 +1,15 @@
 export default function HeaderCategory() {
   return (
-    <header className="header__category-body sec m-auto py-3 px-4  d-flex justify-content-between justify-content-md-start gap-md-5">
-      <div>
+    <header className="header__category-body sec m-auto py-3 px-4  d-flex justify-content-strech justify-content-md-start ">
+      <div
+        className=" px-4  "
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+      >
         <a
           href="#"
-          className=" d-flex align-items-center gap-1"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasBottom"
-          aria-controls="offcanvasBottom"
+          className=" d-flex justify-content-center text-black align-items-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +27,15 @@ export default function HeaderCategory() {
           <span>Ordenar</span>
         </a>
       </div>
-      <div>
+      <div
+        className=" px-4  "
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
         <a
           href="#"
-          className="d-flex align-items-center gap-1"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
+          className="d-flex justify-content-center text-black align-items-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

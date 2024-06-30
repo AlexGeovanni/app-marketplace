@@ -22,7 +22,7 @@ export default function FormLogin({changeForm}:PropsAut) {
       </div>
       <div className=" px-2 form__btn">
         <button type="submit" className="btn btn-primary w-100 ">
-          Entrar
+          ENTRAR
         </button>
       </div>
       <div className="p-2 mt-2 text-center">
