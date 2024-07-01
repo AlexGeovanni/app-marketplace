@@ -14,22 +14,69 @@
     }
    
 }
+
+.body-canvas > div{
+    .list-group li{
+        background-color: transparent;
+    }
+    & ul li a{
+        padding: 14px;
+        padding-left: 16px;
+    }
+    .title__list-group{
+        text-align: center;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            width: 40%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            width: 40%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+    }
+}
+
 .navbar-nav {
     .nav-item{
         width: 100%;
+        & .bi-arrow-right {
+            transform: translateX(0);
+            transition: transform 0.2s ease-in-out;
+        }
+        &:hover .bi-arrow-right {
+            transform: translateX(5px);
+            transition: transform 0.3s ease-in-out;
+        }
     }
     .nav-link {
+        text-transform: uppercase;
         letter-spacing: .5px;
         font-size: 14px;
-        font-weight: 400;
-        border-top: 1px solid #ccc;
+        font-weight: 600;
         padding-top: 15px;
         padding-bottom: 15px;
         color: #000;
+        
     }
+    
     .list-group {
         .list-group-item {
             font-size: 12px;
+            text-transform: uppercase;
         }
     }
 }

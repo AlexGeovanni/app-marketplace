@@ -6,11 +6,11 @@ export default function ModalFilter() {
       <div
         className="offcanvas offcanvas-end"
         tabIndex={-1}
-        id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel"
+        id="offcanvasRightFilter"
+        aria-labelledby="offcanvasRightFilterLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasRightLabel">
+          <h5 className="offcanvas-title" id="offcanvasRightFilterLabel">
             Filtrar
           </h5>
           <button

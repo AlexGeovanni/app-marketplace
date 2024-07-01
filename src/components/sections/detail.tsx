@@ -11,15 +11,15 @@ export default function Detail() {
 
   return (
     <>
-      <section className=" details  ">
-        <div className="sec m-auto p-3 p-md-3 py-2 px-lg-4 ">
+      <section className="details">
+        <div className="sec m-auto p-4 p-md-3 py-2 px-lg-4 ">
           <div className=" row mb-4">
             <div className="col-12 col-lg-7 ">
               <div className="">
                 <img className="w-100" src={img} alt="" />
               </div>
             </div>
-            <div className="col-12 col-lg-5 mt-4 mt-lg-0 p-0 pt-2 pt-md-4 px-lg-2  ">
+            <div className="col-12 col-lg-5 mt-4 mt-lg-0  ">
               <div className="info__details mb-4  ">
                 <h3 className="fw-normal lh-1 my-3 mt-lg-0">
                   {"Name the product asasassas sasasas"}

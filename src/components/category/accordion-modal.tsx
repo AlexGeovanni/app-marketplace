@@ -1,3 +1,5 @@
+import BoxCheck from "./Box/box-check";
+
 export default function AccordionModal() {
   return (
     <>
@@ -20,7 +22,11 @@ export default function AccordionModal() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> 
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
             </div>
           </div>
         </div>
@@ -42,7 +48,11 @@ export default function AccordionModal() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
+            <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
             </div>
           </div>
         </div>
@@ -64,7 +74,11 @@ export default function AccordionModal() {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              <strong>This is the third item's accordion body.</strong> 
+            <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
+              <BoxCheck />
             </div>
           </div>
         </div>

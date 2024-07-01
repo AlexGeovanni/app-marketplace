@@ -8,29 +8,29 @@ export default function Category() {
         <div className="mt-5 py-5">
           <HeaderCategory />
           
-          <div className="container__category-body sec m-auto px-4 ">
-            <div className=" mt-1 mt-md-2 row g-2">
-              <div className="col-6 col-md-4 col-lg-3">
+          <div className="container__category-body sec m-auto px-2 px-md-4 ">
+            <div className=" mt-1 mt-md-2 row g-2 ">
+              <div className="col-6 col-md-4 col-lg-3 container-card">
                 <div className="card-p ">
                   <CardProduct name="Hola" />
                 </div>
               </div>
-              <div className="col-6 col-md-4 col-lg-3">
+              <div className="col-6 col-md-4 col-lg-3 container-card">
                 <div className="card-p ">
                   <CardProduct name="Hola" />
                 </div>
               </div>
-              <div className="col-6 col-md-4 col-lg-3">
+              <div className="col-6 col-md-4 col-lg-3 container-card">
                 <div className="card-p ">
                   <CardProduct name="Hola" />
                 </div>
               </div>
-              <div className="col-6 col-md-4 col-lg-3">
+              <div className="col-6 col-md-4 col-lg-3 container-card">
                 <div className="card-p ">
                   <CardProduct name="Hola" />
                 </div>
               </div>
-              <div className="col-6 col-md-4 col-lg-3">
+              <div className="col-6 col-md-4 col-lg-3 container-card">
                 <div className="card-p ">
                   <CardProduct name="Hola" />
                 </div>

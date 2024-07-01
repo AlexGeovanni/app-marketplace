@@ -10,10 +10,10 @@ export default function CartShop(){
   */
     return (
       <>
-        <section className=" ">
+        <section className=" mt-5">
           <div className="sec m-auto p-2 p-md-3 py-2 px-lg-4 ">
             <div className="mb-2 title-box__cart">
-              <h2 className="fs-1 fw-bold">Mi carrito de compra</h2>
+              <h2 className="m-0">Mi carrito de compra</h2>
             </div>
             <Container />
           </div>

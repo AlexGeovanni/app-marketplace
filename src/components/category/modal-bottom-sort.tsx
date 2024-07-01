@@ -1,11 +1,11 @@
 
 import ListChecksModal from "./list-check-modal";
 
-export default function ModalSort() {
+export default function ModalBottomSort() {
   return (
     <>
       <div
-        className="offcanvas offcanvas-bottom"
+        className="offcanvas offcanvas-bottom d-md-none"
         tabIndex={-1}
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"

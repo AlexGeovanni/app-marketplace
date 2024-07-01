@@ -1,67 +1,44 @@
 import { toast } from "sonner";
 import { CountItem } from "../../hooks/custom-count";
+import ControlStock from "./control-stock";
+import { Link } from "react-router-dom";
 
 export default function Item() {
   const text = "Acme Wireless Headphones";
-  const { handleCouterAdd, handleCouterRemove, count } = CountItem();
+  const { handleCouterAdd, handleCouterRemove,handleOnChange, count } =
+    CountItem();
+  const price: number = 99;
+
   return (
     <>
-      <div className="">
+      <div className="item-card mb-1">
         <div className=" gap-1 d-flex align-items-center justify-content-between ">
-          <div className="rounded overflow-hidden">
+          <Link to={"/detail"} className="img__item-card cp">
             <img
-              src="https://res.cloudinary.com/dyxqrjcpm/image/upload/v1716187413/vaes6cqamhwmxpnqknmu.png"
+              src="https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900"
               alt=""
               width={100}
               height={100}
             />
+          </Link>
+          <div className="info__item-card me-auto mb-auto">
+            <Link to={"/detail"} className="text-decoration-none text-black">
+              <span className=" cp ">{text}</span>
+            </Link>
           </div>
-          <div className="me-auto">
-            <p className=" m-0 ">{text}</p>
-            <p className="opacity-75">High-quality sound and comfort</p>
-          </div>
-          <div className=" d-flex gap-2 align-items-center">
-            <button
-              className="btn p-1 border  rounded-0"
-              onClick={handleCouterRemove}
-              disabled={count < 2}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="currentColor"
-                className="bi bi-dash"
-                viewBox="0 0 16 16"
-              >
-                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
-              </svg>
-            </button>
-            <div>{count}</div>
-            <button className="p-1 border rounded-0" onClick={handleCouterAdd}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="currentColor"
-                className="bi bi-plus"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
-              </svg>
-            </button>
-          </div>
+
+          <ControlStock
+            handleCouterAdd={handleCouterAdd}
+            handleCouterRemove={handleCouterRemove}
+            handleOnChange={handleOnChange}
+            count={count}
+          />
         </div>
-        <div className="p-2 pe-0 d-flex justify-content-between align-items-center">
-          <p className="fw-semibold">
-            $2500MXN{" "}
-            <span className="me-2 fw-normal text-black-50 text-decoration-line-through">
-              $250MXN
-            </span>
-          </p>
+        <div className="p-2  pe-0 d-flex justify-content-between align-items-center">
+          <p className="m-0">${ price * count}MXN</p>
           <div>
             <button
-              className="btn-delete border-0 fw-bold rounded text-danger "
+              className="btn-delete border-0 fw-semibold rounded text-danger "
               onClick={() => {
                 toast.success("Producto eliminado", {
                   description: text,

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import IconBuger from "../header/icon-buger";
 import NavBar from "../header/navbar";
+import SubItem from "../header/sub-item";
 
 export default function Header() {
   return (
@@ -27,6 +28,30 @@ export default function Header() {
               </div>
             </div>
             <NavBar />
+          </div>
+          <div
+            className="offcanvas offcanvas-start d-lg-none"
+            tabIndex={-1}
+            id="offcanvasSubNavbar"
+            aria-labelledby="offcanvasSubNavbarLabel"
+          >
+            <div className="offcanvas-header justify-content-end">
+              <div
+                className="cp offcanvas-close"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+              >
+                Cerrar
+              </div>
+              
+            </div>
+            <div className="body-canvas ">
+                <div>
+                  <SubItem />
+                </div>
+              </div>
           </div>
           <div className="d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
             <div>

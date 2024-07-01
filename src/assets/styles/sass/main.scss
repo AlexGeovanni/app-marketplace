@@ -11,7 +11,6 @@ $headings-font-family: "Plus Jakarta Sans", serif;
 @import "../../../../node_modules/bootstrap/scss/maps";
 @import "../../../../node_modules/bootstrap/scss/mixins";
 
-
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
 
 @import "./header.scss";
@@ -20,21 +19,21 @@ $headings-font-family: "Plus Jakarta Sans", serif;
 @import "./card.scss";
 @import "./footer.scss";
 
-:root{
+:root {
   scroll-behavior: smooth;
 }
+
 html,
 body {
   //background-color: rgb(248, 248, 248);
   font-family: "Plus Jakarta Sans", serif;
-  
 }
 
 .mt-seccions-index {
   margin-top: 75px !important;
 }
 
-.list-group  .list-group-item-action > .svg-icon{
+.list-group .list-group-item-action > .svg-icon {
   pointer-events: none;
 }
 
@@ -51,71 +50,37 @@ body {
 .form__product input,
 .form__product select {
   padding-top: 12px;
-  padding-bottom:12px;
+  padding-bottom: 12px;
 }
-.form__product  button{
+.form__product button {
   padding: 12px;
-}
-label.btn {
-  width: 120px;
-  padding: 0;
-  font-size: 14px;
-
-}
-
-.container-img{
-  width: 280px;
-  max-height: 310px;
-  height: 100%;
-  & img{
-    aspect-ratio: 3/4;
-  }
-}
-
-// icons the header
-.user-icon {
-  font-size: 33px;
-  color: #000000;
-}
-.user-icon.cart {
-  font-size: 28px;
-}
-.notification__cart {
-  font-size: 9px;
-  top: 8px;
-  right: -12px;
-  padding: 3px 0;
-  text-align: center;
-  font-weight: 300;
 }
 
 // HEADER navigation links
-
 .navbar-toggler:focus {
   box-shadow: none;
   border: none;
 }
-.header-container .navbar-nav .nav-item .nav-link{
+.header-container .navbar-nav .nav-item .nav-link {
   font-size: 20px;
   font-weight: 400;
   font-family: "Oswald", sans-serif;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
   // text-transform: uppercase;
   color: #000000;
 }
 
-.bg-white-light .navbar-nav .nav-item .nav-link{
+.bg-white-light .navbar-nav .nav-item .nav-link {
   color: #000000;
 }
 
-.navbar-nav .nav-item .dropdown-menu .dropdown-item{
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
   // text-transform: uppercase;
   font-family: "Oswald", sans-serif;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
 }
 
-
-// forms 
+// forms
 .form-select,
 .form-control {
   border-color: rgba(173, 166, 166, 0.45);
@@ -125,9 +90,9 @@ label.btn {
   box-shadow: none;
 }
 .form-select.is-invalid:focus,
-.form-control.is-invalid:focus{
+.form-control.is-invalid:focus {
   box-shadow: none;
-  border-color: rgba(255, 0, 0, 0.450);
+  border-color: rgba(255, 0, 0, 0.45);
 }
 .dropdown-menu {
   border: none;
@@ -139,32 +104,78 @@ label.btn {
 }
 
 // cart shop styles
-.btn-delete{
+.btn-delete {
   font-size: 14px;
+}
+.cart__subtotal {
+  top: 60px;
+}
+
+.item-card {
+  .img__item-card {
+    max-width: 110px;
+    height: 100%;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+  }
+  .info__item-card {
+    & a span {
+      font-size: 14px;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+  .control-stock {
+    max-width: 90px;
+    .form-control {
+      font-size: 12px;
+    }
+
+    // style para quitar button por defecto de input numer
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="date"] {
+      -moz-appearance: textfield;
+    }
+
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .sec  {
+  .sec {
     max-width: 1180px;
     margin: auto;
   }
-  .user-icon.cart {
-    font-size: 30px;
+  .item-card {
+    .control-stock {
+      max-width: 100px;
+    }
   }
 }
 @media screen and (min-width: 991px) {
-  // HEADER navigation links
-
-  .navbar-nav .dropdown:v .dropdown-menu{
-    position: absolute;
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: flex;
   }
-
-.navbar-nav .dropdown:hover .dropdown-menu{
-  display: flex;
+  .navbar-nav .dropdown .dropdown-menu.show {
+    display: flex;
+  }
 }
-.navbar-nav .dropdown .dropdown-menu.show{
-  display: flex;
-}
-}
-
-

@@ -1,8 +1,9 @@
-import ModalFilter from "../components/category/modal-filter";
-import ModalSort from "../components/category/modal-sort";
+import ModalFilter from "../components/category/modal-right-filter";
 import Category from "../components/sections/category";
 import Footer from "../components/sections/footer";
 import Header from "../components/sections/header";
+import ModalBottomSort from "../components/category/modal-bottom-sort";
+import ModalRightSort from "../components/category/modal-right-sort";
 
 
 export default function PageCategory(){
@@ -11,7 +12,8 @@ export default function PageCategory(){
         <Header />
         <Category />
         <ModalFilter />
-        <ModalSort />
+        <ModalBottomSort />
+        <ModalRightSort />
         <Footer />
         </>
     )

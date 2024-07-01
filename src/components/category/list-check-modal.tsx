@@ -13,7 +13,7 @@ export default function ListChecksModal() {
             readOnly
           />
           <label className="form-check-label" htmlFor="firstRadio">
-            Precio: Mayor a Menor
+            Todos
           </label>
         </li>
         <li className="list-group-item border-0 ">

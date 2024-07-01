@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <div className="seccions  m-auto px-3 px-lg-4  py-4  ">
               <p className="m-0 text-center">
-                &copy; 2024 local Marketplace, Inc. Todos los derechos reservados.
+                &copy; 2024 local Marketplace, Inc.
               </p>
             </div>
           </div>
