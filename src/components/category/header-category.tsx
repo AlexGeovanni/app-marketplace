@@ -1,6 +1,6 @@
 export default function HeaderCategory() {
   return (
-    <header className="header__category-body sec m-auto py-3 px-4  d-flex justify-content-strech justify-content-md-start ">
+    <header className="container-w p-2 p-md-3 px-lg-4 header__category-body d-flex justify-content-strech justify-content-md-start ">
       <div
         className=" px-4 d-md-none"
         data-bs-toggle="offcanvas"

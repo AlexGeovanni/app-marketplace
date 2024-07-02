@@ -9,7 +9,7 @@ export default function SingUp({ changeForm }: PropsAut) {
   const {check,ChangeCheck} =CustomCheck();
 
   return (
-    <section className="sec ">
+    <section className="container-w p-3 px-lg-4">
       <div className="auth-account d-flex align-items-center justify-content-center ">
         <div className=" p-2 py-4 ">
           <div className=" mb-2 mb-lg-3 border-bottom border-2 pb-2">

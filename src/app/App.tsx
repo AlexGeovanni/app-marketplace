@@ -21,7 +21,7 @@ function App() {
           <Route path="/auth" element={<PageAuth />} />
           <Route path="/cart" element={<PageCartShop />} />
           <Route path="/detail" element={<PageDetail />} />
-          <Route path="/products" element={<PageCategory />} />
+          <Route path="/ropa/:id" element={<PageCategory />} />
         </Routes>
       </Router>
     </>

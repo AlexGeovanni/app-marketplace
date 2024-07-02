@@ -58,7 +58,7 @@ export default function OffProduct() {
   return (
     <>
       <section className="">
-        <div className="sec m-auto p-2 p-md-3 py-2 px-lg-4 ">
+        <div className="container-w p-3 px-lg-4 ">
           <h2 className="fw-normal fs-4 m-0 mb-3 ">REBAJAS</h2>
           <div className=" ">
             <Swiper

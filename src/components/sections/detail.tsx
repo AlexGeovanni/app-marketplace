@@ -12,7 +12,7 @@ export default function Detail() {
   return (
     <>
       <section className="details">
-        <div className="sec m-auto p-4 p-md-3 py-2 px-lg-4 ">
+        <div className="container-w p-3 px-lg-4">
           <div className=" row mb-4">
             <div className="col-12 col-lg-7 ">
               <div className="">
@@ -80,7 +80,7 @@ export default function Detail() {
             </div>
           </div>
           <div className="">
-            <h3 className="">Detalles</h3>
+            <h3 className="">Descripciòn</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam illum
               eos voluptas! Voluptate fugiat voluptatibus molestias architecto

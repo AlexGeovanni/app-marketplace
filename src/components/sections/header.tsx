@@ -2,12 +2,32 @@ import { Link } from "react-router-dom";
 import IconBuger from "../header/icon-buger";
 import NavBar from "../header/navbar";
 import SubItem from "../header/sub-item";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dak bg-white fixed-top">
-        <div className="container d-flex  ">
+      <nav className={`navbar navbar-expand-lg navbar-dak sticky-top  ${isScrolled? "bg-scroll-down shado":""}`}>
+        <div className=" px-2 w-100 d-flex justify-content-between">
           <a className="navbar-brand m-0 ms-lg-3" href="#">
             LOGO APP
           </a>
@@ -53,7 +73,7 @@ export default function Header() {
                 </div>
               </div>
           </div>
-          <div className="d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
+          <div className=" d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
             <div>
               <Link to={"/cart"} className="text-decoration-none text-black">
                 <svg

@@ -29,9 +29,6 @@ body {
   font-family: "Plus Jakarta Sans", serif;
 }
 
-.mt-seccions-index {
-  margin-top: 75px !important;
-}
 
 .list-group .list-group-item-action > .svg-icon {
   pointer-events: none;
@@ -61,24 +58,8 @@ body {
   box-shadow: none;
   border: none;
 }
-.header-container .navbar-nav .nav-item .nav-link {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 0.7px;
-  // text-transform: uppercase;
-  color: #000000;
-}
 
-.bg-white-light .navbar-nav .nav-item .nav-link {
-  color: #000000;
-}
 
-.navbar-nav .nav-item .dropdown-menu .dropdown-item {
-  // text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 0.7px;
-}
 
 // forms
 .form-select,
@@ -94,6 +75,7 @@ body {
   box-shadow: none;
   border-color: rgba(255, 0, 0, 0.45);
 }
+
 .dropdown-menu {
   border: none;
 }
@@ -161,7 +143,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .sec {
+  .container-w {
     max-width: 1180px;
     margin: auto;
   }

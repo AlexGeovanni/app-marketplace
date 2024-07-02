@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SubItem() {
   return (
     <>
@@ -17,21 +19,21 @@ export default function SubItem() {
               Ropa
             </a>
           </li>
-          <li className="list-group-item p-0 border-0">
-            <a className="dropdown-item " href="#">
+          <Link to={"/ropa/hombre"} className="list-group-item p-0 border-0">
+            <span className="dropdown-item ">
               Hombre
-            </a>
-          </li>
-          <li className="list-group-item p-0 border-0">
-            <a className="dropdown-item " href="#">
+            </span>
+          </Link>
+          <Link to={"/ropa/mujer"} className="list-group-item p-0 border-0">
+            <span className="dropdown-item ">
               Mujer
-            </a>
-          </li>
-          <li className="list-group-item p-0 border-0">
-            <a className="dropdown-item " href="#">
+            </span>
+          </Link>
+          <Link to={"/ropa/kids"} className="list-group-item p-0 border-0">
+            <span className="dropdown-item " >
               Kids
-            </a>
-          </li>
+            </span>
+          </Link>
         </ul>
     </>
   );

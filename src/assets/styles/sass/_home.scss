@@ -1,15 +1,14 @@
 
 //Inicio
 .home-main-seccions {
-  border: 2px solid #020222;
+  margin-top: -57px;
   height: 70vh;
   background-size: auto;
   background-image: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(255, 255, 255, 0) 75%),
   url("../../imgs/pixel.jpg");
   background-size: cover;
   background-position:  top;
-  //margin-top: 20px;
-  //padding-top: 40px;
+
   & > div {
     height: 100%;
     & .title__seccions {
