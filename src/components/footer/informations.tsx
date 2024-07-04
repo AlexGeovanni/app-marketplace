@@ -26,7 +26,7 @@ export default function Information(){
                         {
                             item.text.map((text,index)=>{
                                 return(
-                                    <p key={index}>{text}</p>
+                                    <p key={index} className="">{text}</p>
                                 )
                             })
                         }

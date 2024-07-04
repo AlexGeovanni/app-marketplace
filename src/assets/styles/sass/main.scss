@@ -1,9 +1,11 @@
 $primary: #3b37ff;
+$primary: #1e1e1e;
 $headings-font-family: "Plus Jakarta Sans", serif;
 // font-family: "Plus Jakarta Sans", sans-serif;
 //   font-optical-sizing: auto;
 //   font-weight: <weight>;
 //   font-style: normal;
+$btn-border-radius: 4px;
 
 @import "../../../../node_modules/bootstrap/scss/functions";
 @import "../../../../node_modules/bootstrap/scss/variables";
@@ -33,6 +35,8 @@ body {
 .list-group .list-group-item-action > .svg-icon {
   pointer-events: none;
 }
+
+
 
 .btn-container input[type="file"] {
   position: absolute;

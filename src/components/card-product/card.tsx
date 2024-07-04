@@ -27,7 +27,7 @@ export default function CardProduct({ name }: Props) {
         </Link>
       </div>
       <div className="btn-shop">
-        <button className="btn btn-dark w-100 rounded-0 p-1 fw-light">
+        <button className="btn w-100  fw-light">
           Comprar ahora
         </button>
       </div>

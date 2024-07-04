@@ -5,7 +5,7 @@ export default function BoxButtons() {
     <>
       <div className="btns d-flex gap-2 align-items-center">
         <Link
-          to={"/products"}
+          to={"/ropa/hombre"}
           className=" text-decoration-none text-decoration-underline text-white"
         >
           Comprar ahora
@@ -23,7 +23,14 @@ export default function BoxButtons() {
             />
           </svg>
         </Link>
-        <button className="btn">Registrate ahora</button>
+        <button className="btn">
+          <Link
+            to={"/auth"}
+            className="text-decoration-none  text-white"
+          >
+            Registrate ahora
+          </Link>
+        </button>
       </div>
     </>
   );

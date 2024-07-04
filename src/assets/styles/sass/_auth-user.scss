@@ -4,9 +4,11 @@
     & > div{
         max-width: 480px;
         width: 100%;
-        & form .form__btn button{
+        & form .form__btn button.btn{
             padding: 10px;
-            font-size: 18px;
+            font-size: 14px;
+            letter-spacing: 1px;
+
         }
     }
 }

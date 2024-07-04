@@ -10,12 +10,12 @@ export default function Footer() {
       <>
         <footer className="footer-container">
           <section className="container-w p-3 px-lg-4 ">
-            <div className=" d-flex justify-content-between gap-3 flex-wrap">
+            <div className=" information__footer-container d-flex justify-content-between gap-3 flex-wrap">
             <Information />
             </div>
           </section>
           <div>
-            <div className="seccions  m-auto px-3 px-lg-4  py-4  ">
+            <div className="copy__footer-container container-w p-3 px-lg-4 py-4  ">
               <p className="m-0 text-center">
                 &copy; 2024 local Marketplace, Inc.
               </p>

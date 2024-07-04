@@ -26,9 +26,9 @@ export default function Header() {
 
   return (
     <>
-      <nav className={`navbar navbar-expand-lg navbar-dak sticky-top  ${isScrolled? "bg-scroll-down shado":""}`}>
-        <div className=" px-2 w-100 d-flex justify-content-between">
-          <a className="navbar-brand m-0 ms-lg-3" href="#">
+      <nav className={`navbar navbar-expand-lg navbar-dak sticky-top   ${isScrolled? "bg-scroll-down shado":""} `}>
+        <div className="px-1 p-2 px-lg-3 w-100 d-flex justify-content-between">
+          <a className="navbar-brand " href="#">
             LOGO APP
           </a>
           <IconBuger />

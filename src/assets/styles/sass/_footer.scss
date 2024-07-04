@@ -2,4 +2,15 @@
 .footer-container{
     background-color: #020202;
     color: #ffffff;
+
+    & .information__footer-container{
+        & div p{
+            font-size: 14px;
+        }
+    }
+    & .copy__footer-container{
+        & p{
+            font-size: 14px;
+        }
+    }
 }

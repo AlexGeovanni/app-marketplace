@@ -31,7 +31,19 @@
   }
 
   .btn-shop {
-    font-size: 14px;
+    & button.btn{
+      font-size: 12px;
+      background-color: #000000;
+      color: #fff;
+      letter-spacing: 1px;
+      padding: 8px 0;
+
+      &:hover {
+        background-color: #171717;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+    }
   }
 }
 

@@ -8,7 +8,7 @@ export default function PopularCategorys() {
       <section className="container-popular ">
         <div className="container-w p-3 px-lg-4 ">
           <h2 className="fs-4 m-0 mb-3">Lo que te puede interesar</h2>
-          <div className="row  mt-1 ">
+          <div className="row g-2 mt-1 ">
             <div className=" col- col-md-4 ">
               <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={man} alt="" />
