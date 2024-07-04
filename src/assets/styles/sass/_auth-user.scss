@@ -2,13 +2,21 @@
 .auth-account{
     min-height: 75vh;
     & > div{
-        max-width: 480px;
         width: 100%;
         & form .form__btn button.btn{
             padding: 10px;
             font-size: 14px;
             letter-spacing: 1px;
 
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .auth-account{
+        min-height: 75vh;
+        & > div{
+            max-width: 490px;
         }
     }
 }

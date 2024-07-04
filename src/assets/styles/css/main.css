@@ -11960,7 +11960,6 @@ textarea.form-control-lg {
   min-height: 75vh;
 }
 .auth-account > div {
-  max-width: 480px;
   width: 100%;
 }
 .auth-account > div form .form__btn button.btn {
@@ -11969,6 +11968,14 @@ textarea.form-control-lg {
   letter-spacing: 1px;
 }
 
+@media screen and (min-width: 768px) {
+  .auth-account {
+    min-height: 75vh;
+  }
+  .auth-account > div {
+    max-width: 490px;
+  }
+}
 .home-main-seccions {
   margin-top: -75px;
   height: 70vh;
