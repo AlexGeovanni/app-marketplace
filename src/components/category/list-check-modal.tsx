@@ -1,7 +1,7 @@
 
 interface Props extends React.HTMLAttributes<HTMLInputElement>{
   selectedCheckbox:number
-  handleCheckboxChange:(index:React.ChangeEvent<HTMLInputElement>)=>void;
+  handleCheckboxChange:(index:number)=>void;
 }
 export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,id}:Props) {
 
@@ -13,10 +13,10 @@ export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,i
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value={1}
+            value=""
             id={`firstRadio${id}`}
-            defaultChecked={true}
-            onChange={(e) => handleCheckboxChange(e)}
+            defaultChecked={selectedCheckbox === 1}
+            onChange={() => handleCheckboxChange(1)}
           />
           <label className="form-check-label" htmlFor={`firstRadio${id}`}>
             Todos
@@ -27,10 +27,10 @@ export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,i
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value={2}
+            value=""
             id={`secondRadio${id}`}
             checked={selectedCheckbox === 2}
-            onChange={(e) => handleCheckboxChange(e)}
+            onChange={() => handleCheckboxChange(2)}
           />
           <label className="form-check-label" htmlFor={`secondRadio${id}`}>
             Precio: Menor a Mayor
@@ -41,10 +41,10 @@ export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,i
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value={3}
+            value=""
             id={`thirdRadio${id}`}
             checked={selectedCheckbox === 3}
-            onChange={(e) => handleCheckboxChange(e)}
+            onChange={() => handleCheckboxChange(3)}
           />
           <label className="form-check-label" htmlFor={`thirdRadio${id}`}>
             A - Z 

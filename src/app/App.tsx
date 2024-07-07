@@ -9,6 +9,7 @@ import ScrollToTop from "./ScrollTop";
 import PageCartShop from "../pages/page_cart-shop";
 import PageDetail from "../pages/page_detail";
 import PageCategory from "../pages/page_category";
+import PageProfile from "../pages/page_profile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart" element={<PageCartShop />} />
           <Route path="/detail" element={<PageDetail />} />
           <Route path="/ropa/:id" element={<PageCategory />} />
+          <Route path="/profile" element={<PageProfile />} />
         </Routes>
       </Router>
     </>

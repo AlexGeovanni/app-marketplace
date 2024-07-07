@@ -6,8 +6,8 @@ type Props ={
 export default function SubTotal ({cantidad}:Props) {
     return(
         <>
-        <div className="col-12 col-lg-5 pb-2  ">
-            <div className="cart__subtotal position-sticky  mt-5 mt-lg-0  border border-2 rounded p-3 py-2">
+        <div className="col-12 col-lg-5 pb-2   ">
+            <div className="cart__subtotal position-sticky shadow-lg   mt-5 mt-lg-0  border  rounded p-3 py-2">
                 <div className="bg-white">
                     <div className="d-flex justify-content-between">
                         <p className="m-0">Subtotal( producto):</p>

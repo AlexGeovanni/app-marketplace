@@ -9,7 +9,7 @@ export default function CheckForm({check,ChangeCheck}:Props){
         <div className="d-flex justify-content-center pb-3 gap-1">
             <input
               type="radio"
-              className="btn-check"
+              className="btn-check "
               name="options-base"
               id="0"
               autoComplete="off"
@@ -18,7 +18,7 @@ export default function CheckForm({check,ChangeCheck}:Props){
               onClick={ChangeCheck}
             />
             <label
-              className="btn btn-outline-secondary rounded-pill "
+              className="btn btn-outline-secondary rounded-pill w-100 "
               htmlFor="0"
             >
               Personal
@@ -35,7 +35,7 @@ export default function CheckForm({check,ChangeCheck}:Props){
              onClick={ChangeCheck}
             />
             <label
-              className="btn btn-outline-secondary rounded-pill "
+              className="btn btn-outline-secondary rounded-pill w-100  "
               htmlFor="1"
             >
               Negocio

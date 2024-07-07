@@ -4,8 +4,8 @@ export default function HeaderCategory() {
       <div
         className=" px-4 d-md-none"
         data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasTop"
-        aria-controls="offcanvasTop"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
       >
         <a
           href="#"

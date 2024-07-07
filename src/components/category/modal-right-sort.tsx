@@ -1,18 +1,10 @@
-import { useState } from "react";
-//import CustomFilterCheckbox from "../../hooks/custom-filter-check";
+import CustomFilterCheckbox from "../../hooks/custom-filter-check";
 import ListChecksModal from "./list-check-modal";
 
 
 export default function ModalRightSort(){
-
-  const [selectedCheckbox,setSelectedCheckbox]= useState(1);
-
-  const handleCheckboxChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
-    setSelectedCheckbox(parseInt(e.target.value))
-    e.target.checked = true
-    console.log(e.target)
-  }
-
+  const {selectedCheckbox,handleCheckboxChange}=CustomFilterCheckbox()
+  console.log(selectedCheckbox)
         return (
           <>
             <div

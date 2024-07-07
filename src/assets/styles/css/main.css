@@ -12056,16 +12056,24 @@ textarea.form-control-lg {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.mySwiper:hover .swiper-button-prev, .mySwiper:hover .swiper-button-next {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease-in-out;
+}
 .mySwiper .swiper-button-prev,
 .mySwiper .swiper-button-next {
   --swiper-theme-color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   --swiper-navigation-size: 25px;
   height: 42px;
   width: 42px;
   padding: 4px;
   margin-top: -24px;
   border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
 }
 .mySwiper .swiper-button-prev {
   left: 1px;
@@ -12271,7 +12279,7 @@ body {
 }
 
 .cart__subtotal {
-  top: 60px;
+  top: 75px;
 }
 
 .item-card .img__item-card {
