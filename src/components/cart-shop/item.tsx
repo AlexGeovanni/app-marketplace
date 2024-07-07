@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Item() {
   const text = "Acme Wireless Headphones";
-  const { handleCouterAdd, handleCouterRemove,handleOnChange, count } =
-    CountItem();
+  const { handleCouterAdd, handleCouterRemove,handleOnChange, count } =CountItem();
   const price: number = 99;
 
   return (

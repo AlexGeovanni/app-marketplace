@@ -1,4 +1,10 @@
-export default function ListChecksModal() {
+
+interface Props extends React.HTMLAttributes<HTMLInputElement>{
+  selectedCheckbox:number
+  handleCheckboxChange:(index:React.ChangeEvent<HTMLInputElement>)=>void;
+}
+export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,id}:Props) {
+
   return (
     <>
       <ul className="list-group gap-1">
@@ -7,12 +13,12 @@ export default function ListChecksModal() {
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value=""
-            id="firstRadio"
-            checked
-            readOnly
+            value={1}
+            id={`firstRadio${id}`}
+            defaultChecked={selectedCheckbox === 1}
+            onChange={(e) => handleCheckboxChange(e)}
           />
-          <label className="form-check-label" htmlFor="firstRadio">
+          <label className="form-check-label" htmlFor={`firstRadio${id}`}>
             Todos
           </label>
         </li>
@@ -21,11 +27,12 @@ export default function ListChecksModal() {
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value=""
-            id="secondRadio"
-            readOnly
+            value={2}
+            id={`secondRadio${id}`}
+            checked={selectedCheckbox === 2}
+            onChange={(e) => handleCheckboxChange(e)}
           />
-          <label className="form-check-label" htmlFor="secondRadio">
+          <label className="form-check-label" htmlFor={`secondRadio${id}`}>
             Precio: Menor a Mayor
           </label>
         </li>
@@ -34,11 +41,12 @@ export default function ListChecksModal() {
             className="form-check-input me-1 border-secondary"
             type="radio"
             name="listGroupRadio"
-            value=""
-            id="thirdRadio"
-            readOnly
+            value={3}
+            id={`thirdRadio${id}`}
+            checked={selectedCheckbox === 3}
+            onChange={(e) => handleCheckboxChange(e)}
           />
-          <label className="form-check-label" htmlFor="thirdRadio">
+          <label className="form-check-label" htmlFor={`thirdRadio${id}`}>
             A - Z 
           </label>
         </li>

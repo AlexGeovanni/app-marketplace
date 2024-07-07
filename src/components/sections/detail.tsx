@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Toaster, toast } from "sonner";
 
 import img from "../../assets/imgs/man-clothes.jpeg";
@@ -59,15 +58,6 @@ export default function Detail() {
                 </span>
               </div>
               <div className="btns-container">
-                <button className="w-100 btn btn-primary p-0 ">
-                  <Link
-                    to="/cartmarket"
-                    className="text-decoration-none  text-white btn w-100 py-2 "
-                  >
-                    COMPRAR AHORA
-                  </Link>
-                </button>
-
                 <button
                   className="btn rounded  btn-primary w-100 mt-3 py-2 "
                   onClick={() => {

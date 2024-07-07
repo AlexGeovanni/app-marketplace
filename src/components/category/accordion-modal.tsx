@@ -1,12 +1,47 @@
-import { useState } from "react";
-import BoxCheck from "./Box/box-check";
+import AccordionBody from "./Box/accordion-body";
 
+export interface ArraysTypes{
+  title: string;
+  value: number;
+}
 export default function AccordionModal() {
-  const [selectedCheckbox, setSelectedCheckbox] = useState(1);
 
-  const handleCheckboxChange = (index: number) => {
-    setSelectedCheckbox(index);
-  };
+  const arraySizes:ArraysTypes[] =[
+    {
+      title: "S",
+      value: 1,
+    },
+    {
+      title: "M",
+      value: 2,
+    },
+    {
+      title: "L",
+      value: 3,
+    },
+    {
+      title: "XL",
+      value: 4,
+    }
+  ]
+  const arrayBrad:ArraysTypes[]=[
+    {
+      title: "Nike",
+      value: 1,
+    },
+    {
+      title: "Adidas",
+      value: 2,
+    },
+    {
+      title: "Puma",
+      value: 3,
+    },
+    {
+      title: "Reebok",
+      value: 4,
+    }
+  ]
 
   return (
     <>
@@ -21,59 +56,17 @@ export default function AccordionModal() {
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapseOne"
             >
-              Negocio
+              Tamaño
             </button>
           </h2>
           <div
             id="panelsStayOpen-collapseOne"
             className="accordion-collapse collapse"
           >
-            <div className="accordion-body">
-              <BoxCheck
-                selectedCheckbox={selectedCheckbox}
-                handleCheckboxChange={handleCheckboxChange}
-                numberOfCheck={1}
-                
-                id="flexCheckChecked1"
-                name="flexCheckBusiness"
-                text="Negocio1"
-              />
-              <BoxCheck
-                selectedCheckbox={selectedCheckbox}
-                handleCheckboxChange={handleCheckboxChange}
-                numberOfCheck={2}
-                id="flexCheckChecked2"
-                name="flexCheckBusiness"
-                text="Negocio2"
-              />
-              <BoxCheck
-                selectedCheckbox={selectedCheckbox}
-                handleCheckboxChange={handleCheckboxChange}
-                numberOfCheck={3}
-                id="flexCheckChecked3"
-                name="flexCheckBusiness"
-                text="Negocio3"
-              />
-              <BoxCheck
-                selectedCheckbox={selectedCheckbox}
-                handleCheckboxChange={handleCheckboxChange}
-                numberOfCheck={4}
-                id="flexCheckChecked4"
-                name="flexCheckBusiness"
-                text="Negocio4"
-              />
-              <BoxCheck
-                selectedCheckbox={selectedCheckbox}
-                handleCheckboxChange={handleCheckboxChange}
-                numberOfCheck={5}
-                id="flexCheckChecked5"
-                name="flexCheckBusiness"
-                text="Negocio5"
-              />
-            </div>
+            <AccordionBody array={arraySizes} name="CheckboxBusiness" />
           </div>
         </div>
-        {/* <div className="accordion-item border-0 border-bottom rounded-0">
+        <div className="accordion-item border-0 border-bottom rounded-0">
           <h2 className="accordion-header">
             <button
               className="accordion-button shadow-none collapsed rounded-0"
@@ -90,35 +83,10 @@ export default function AccordionModal() {
             id="panelsStayOpen-collapseTwo"
             className="accordion-collapse collapse"
           >
-            <div className="accordion-body">
-              <BoxCheck
-                id="flexCheckChecked6"
-                name="flexCheckBrad"
-                text="marca1"
-              />
-              <BoxCheck
-                id="flexCheckChecked7"
-                name="flexCheckBrad"
-                text="marca2"
-              />
-              <BoxCheck
-                id="flexCheckChecked8"
-                name="flexCheckBrad"
-                text="marca3"
-              />
-              <BoxCheck
-                id="flexCheckChecked9"
-                name="flexCheckBrad"
-                text="marca4"
-              />
-              <BoxCheck
-                id="flexCheckChecked10"
-                name="flexCheckBrad"
-                text="marca5"
-              />
-            </div>
+            <AccordionBody array={arrayBrad} name="CheckboxBrad" />
           </div>
         </div>
+        {/* 
         <div className="accordion-item border-0 border-bottom rounded-0">
           <h2 className="accordion-header">
             <button

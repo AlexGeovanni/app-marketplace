@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLInputElement>{
 
 export default function BoxCheck({selectedCheckbox,handleCheckboxChange,numberOfCheck, id,name,text}:Props) {
   return (
-    <div className="form-check">
+    <div className="form-check"  >
       <input
         className="form-check-input"
         type="checkbox"
@@ -18,7 +18,7 @@ export default function BoxCheck({selectedCheckbox,handleCheckboxChange,numberOf
         value=""
         id={id}
         checked={selectedCheckbox === numberOfCheck}
-          onChange={() => handleCheckboxChange(numberOfCheck)}
+        onChange={() => handleCheckboxChange(numberOfCheck)}
       />
       <label className="form-check-label" htmlFor={id}>
        {text}
