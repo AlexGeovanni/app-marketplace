@@ -1,26 +1,30 @@
-
 //import CustomFilterCheckbox from "../../hooks/custom-filter-check";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListChecksModal from "./list-check-modal";
 
 export default function ModalBottomSort() {
-  const [selectedCheckbox,setSelectedCheckbox]= useState(1);
-  const handleCheckboxChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
-    setSelectedCheckbox(parseInt(e.target.value))
-  
-    console.log(e)
-  }
+  const [selectedCheckbox, setSelectedCheckbox] = useState(1);
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedCheckbox(parseInt(e.target.value));
+
+    console.log(e);
+  };
+
+  useEffect(() => {
+    setSelectedCheckbox(1);
+  }, []);
+
   return (
     <>
       <div
-        className="offcanvas offcanvas-bottom d-block d-md-none"
+        className="offcanvas offcanvas-top"
         tabIndex={-1}
-        id="offcanvasBottom"
-        aria-labelledby="offcanvasBottomLabel"
+        id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasBottomLabel">
-            Ordenar por
+          <h5 className="offcanvas-title" id="offcanvasTopLabel">
+            Offcanvas top
           </h5>
           <button
             type="button"
@@ -29,8 +33,12 @@ export default function ModalBottomSort() {
             aria-label="Close"
           ></button>
         </div>
-        <div className="offcanvas-body small">
-            <ListChecksModal selectedCheckbox={selectedCheckbox} handleCheckboxChange={handleCheckboxChange}  id="Bottom" />
+        <div className="offcanvas-body">
+          <ListChecksModal
+            selectedCheckbox={selectedCheckbox}
+            handleCheckboxChange={handleCheckboxChange}
+            id="Bottom"
+          />
         </div>
       </div>
     </>

@@ -15,7 +15,7 @@ export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,i
             name="listGroupRadio"
             value={1}
             id={`firstRadio${id}`}
-            defaultChecked={selectedCheckbox === 1}
+            defaultChecked={true}
             onChange={(e) => handleCheckboxChange(e)}
           />
           <label className="form-check-label" htmlFor={`firstRadio${id}`}>

@@ -6,10 +6,10 @@ import ListChecksModal from "./list-check-modal";
 export default function ModalRightSort(){
 
   const [selectedCheckbox,setSelectedCheckbox]= useState(1);
+
   const handleCheckboxChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
     setSelectedCheckbox(parseInt(e.target.value))
     e.target.checked = true
-  
     console.log(e.target)
   }
 
