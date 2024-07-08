@@ -1,8 +1,14 @@
-import CustomFilterCheckbox from "../../hooks/custom-filter-check";
+import CustomResize from "../../hooks/custom-resize";
+import ListChecksModal from "./list-check-modal";
 
 
 export default function ModalBottomSort() {
-  const { selectedCheckbox, handleCheckboxChange } = CustomFilterCheckbox();
+  const {width}=CustomResize()
+
+  if (width > 768) {
+    return null; // Do not render the modal on small screens.
+  }
+
   return (
     <>
       <div
@@ -23,50 +29,7 @@ export default function ModalBottomSort() {
           ></button>
         </div>
         <div className="offcanvas-body small">
-          <ul className="list-group gap-1">
-            <li className="list-group-item border-0">
-              <input
-                className="form-check-input me-1 border-secondary"
-                type="radio"
-                name="listGroupRadioxd"
-                value=""
-                id={`firstRadio1`}
-                defaultChecked={selectedCheckbox === 1}
-            onChange={() => handleCheckboxChange(1)}
-              />
-              <label className="form-check-label" htmlFor={`firstRadio1`}>
-                Todos
-              </label>
-            </li>
-            <li className="list-group-item border-0 ">
-              <input
-                className="form-check-input me-1 border-secondary"
-                type="radio"
-                name="listGroupRadioxd"
-                value=""
-                id={`secondRadio2`}
-                defaultChecked={selectedCheckbox === 2}
-            onChange={() => handleCheckboxChange(2)}
-              />
-              <label className="form-check-label" htmlFor={`secondRadio2`}>
-                Precio: Menor a Mayor
-              </label>
-            </li>
-            <li className="list-group-item border-0 ">
-              <input
-                className="form-check-input me-1 border-secondary"
-                type="radio"
-                name="listGroupRadioxd"
-                value=""
-                id={`thirdRadio3`}
-                defaultChecked={selectedCheckbox === 3}
-            onChange={() => handleCheckboxChange(3)}
-              />
-              <label className="form-check-label" htmlFor={`thirdRadio3`}>
-                A - Z
-              </label>
-            </li>
-          </ul>
+          <ListChecksModal  />
         </div>
       </div>
     </>

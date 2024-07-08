@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 export default function CustomFilterCheckbox() {
-  const [selectedCheckbox, setSelectedCheckbox] = useState(1);
+  const [selectedCheckbox, setSelectedCheckbox] = useState<string|null>("all");
 
-  const handleCheckboxChange = (index: number) => {
+ 
+  const handleCheckboxChange = (index: string) => {
     setSelectedCheckbox(index);
   };
+
   return{selectedCheckbox,handleCheckboxChange}
 }

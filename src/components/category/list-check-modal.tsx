@@ -1,55 +1,60 @@
+import { useState } from "react";
+//import CustomFilterCheckbox from "../../hooks/custom-filter-check";
 
 interface Props extends React.HTMLAttributes<HTMLInputElement>{
-  selectedCheckbox:number
-  handleCheckboxChange:(index:number)=>void;
+  
 }
-export default function ListChecksModal({selectedCheckbox,handleCheckboxChange,id}:Props) {
 
+interface Items{
+  value:string;
+  label:string;
+}
+
+export default function ListChecksModal({id}:Props) {
+  
+  const [selectedCheckbox, setSelectedCheckbox] = useState<string|null>("all");
+
+ 
+  const handleCheckboxChange = (index: string) => {
+    setSelectedCheckbox(index);
+  };
+  const items:Items[]=[
+    {
+      value:"all",
+      label: "Todos"
+    },
+    {
+      value:"desc",
+      label: "Precio: Mayor a Menor"
+    },
+    {
+      value:"asc",
+      label: "Precio: Menor a Mayor"
+    }
+  ]
+
+  console.log(selectedCheckbox);
   return (
     <>
       <ul className="list-group gap-1">
-        <li className="list-group-item border-0">
-          <input
-            className="form-check-input me-1 border-secondary"
-            type="radio"
-            name="listGroupRadio"
-            value=""
-            id={`firstRadio${id}`}
-            defaultChecked={selectedCheckbox === 1}
-            onChange={() => handleCheckboxChange(1)}
-          />
-          <label className="form-check-label" htmlFor={`firstRadio${id}`}>
-            Todos
-          </label>
-        </li>
-        <li className="list-group-item border-0 ">
-          <input
-            className="form-check-input me-1 border-secondary"
-            type="radio"
-            name="listGroupRadio"
-            value=""
-            id={`secondRadio${id}`}
-            checked={selectedCheckbox === 2}
-            onChange={() => handleCheckboxChange(2)}
-          />
-          <label className="form-check-label" htmlFor={`secondRadio${id}`}>
-            Precio: Menor a Mayor
-          </label>
-        </li>
-        <li className="list-group-item border-0 ">
-          <input
-            className="form-check-input me-1 border-secondary"
-            type="radio"
-            name="listGroupRadio"
-            value=""
-            id={`thirdRadio${id}`}
-            checked={selectedCheckbox === 3}
-            onChange={() => handleCheckboxChange(3)}
-          />
-          <label className="form-check-label" htmlFor={`thirdRadio${id}`}>
-            A - Z 
-          </label>
-        </li>
+        {
+          items.map((item, index) => (
+            <li key={index} className="list-group-item border-0 ">
+              <input
+                className="form-check-input me-1 border-secondary"
+                type="radio"
+                name={`listGroupRadio${id}`}	
+                value={item.value}
+                id={`firstRadio${id}${index}`}
+                checked={selectedCheckbox == item.value}
+                onChange={(e) => handleCheckboxChange(e.target.value)}
+              />
+              <label className="form-check-label" htmlFor={`firstRadio${id}${index}`}>
+                {item.label}
+              </label>
+            </li>
+          ))
+        }
       </ul>
     </>
   );

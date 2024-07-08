@@ -1,10 +1,14 @@
-import CustomFilterCheckbox from "../../hooks/custom-filter-check";
+import CustomResize from "../../hooks/custom-resize";
 import ListChecksModal from "./list-check-modal";
 
 
 export default function ModalRightSort(){
-  const {selectedCheckbox,handleCheckboxChange}=CustomFilterCheckbox()
-  console.log(selectedCheckbox)
+  
+  const {width}=CustomResize()
+  if(width<768){
+    return null;  // If the width is less than 768px, don't render the modal.
+  }
+
         return (
           <>
             <div
@@ -25,7 +29,7 @@ export default function ModalRightSort(){
                 ></button>
               </div>
               <div className="offcanvas-body">
-                <ListChecksModal selectedCheckbox={selectedCheckbox} handleCheckboxChange={handleCheckboxChange} id="Right"  />
+                <ListChecksModal   />
               </div>
             </div>
           </>

@@ -8,9 +8,13 @@ import "./assets/styles/css/main.css"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Provider } from 'react-redux';
+import { store } from './redux/store.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <Provider store={store} >
+    <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
 )

@@ -1,15 +1,16 @@
 interface Props {
-  handleCouterAdd: () => void;
-  handleCouterRemove: () => void;
-  handleOnChange: (e:React.ChangeEvent<HTMLInputElement>) => void;
-  count: number;
+  handleCouterIncre: () => void
+  handleCouterDecre: () => void
+  handleBlur: () => void
+  handleOnChange: (e:React.ChangeEvent<HTMLInputElement>) => void
+  count: number
 }
 
-export default function ControlStock({handleCouterAdd,handleCouterRemove,handleOnChange,count}: Props) {
+export default function ControlStock({handleCouterIncre,handleCouterDecre,handleBlur,handleOnChange,count=1}: Props) {
   return (
     <>
       <div className="input-group rounded control-stock border border-black">
-        <span className="cp " onClick={handleCouterRemove}>
+        <span className="cp " onClick={handleCouterDecre}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
@@ -27,9 +28,10 @@ export default function ControlStock({handleCouterAdd,handleCouterRemove,handleO
           aria-label="Text input with 2 dropdown buttons"
           min={1}
           onChange={(e)=>handleOnChange(e)}
+          onBlur={handleBlur}
           value={count}
         />
-        <span className="cp" onClick={handleCouterAdd}>
+        <span className="cp" onClick={handleCouterIncre}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"

@@ -1,27 +1,48 @@
 import { PropsAut } from "../../Types";
 import InputBox from "../box-input/input";
 
+import { LoginSchema,TLoginSchema } from "../../validations/UserSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm} from  "react-hook-form"
+
+
+
 export default function FormLogin({changeForm}:PropsAut) {
+
+
+  const { register, handleSubmit,formState:{errors,isSubmitting} } = useForm<TLoginSchema>({
+    resolver:zodResolver(LoginSchema)
+  });
+
+  const OnSubmit = async (data:TLoginSchema) => {
+    console.log(data);
+  };
+
+
   return (
-    <form >
+    <form  onSubmit={handleSubmit(OnSubmit)}>
       <div className="form-floating mb-3">
         <InputBox
-          type="email"
+          name="emailLogin"
           placeholder="EmailLogin"
           value="Correo electronico"
+          register={register("email")}
+          error={errors?.email}
         />
       </div>
       <div className="form-floating">
         <div className="form-floating mb-3">
           <InputBox
-            type="password"
+            name="passwordLogin"
             placeholder="PasswordLogin"
             value="Contraseña"
+            register={register("password")}
+            error={errors?.password}
           />
         </div>
       </div>
       <div className=" px-1 form__btn">
-        <button type="submit" className="btn btn-primary w-100 ">
+        <button disabled={isSubmitting} type="submit" className="btn btn-primary w-100 ">
           ENTRAR
         </button>
       </div>

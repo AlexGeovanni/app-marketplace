@@ -11,7 +11,7 @@ export default function SubTotal ({cantidad}:Props) {
                 <div className="bg-white">
                     <div className="d-flex justify-content-between">
                         <p className="m-0">Subtotal( producto):</p>
-                        <p className="m-0">${0}</p>
+                        <p className="m-0">${cantidad}</p>
                     </div>
                     <div className="d-flex justify-content-between">
                         <p className="m-0">Descuento:</p>

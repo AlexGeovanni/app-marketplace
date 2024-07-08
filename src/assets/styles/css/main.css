@@ -11948,11 +11948,11 @@ textarea.form-control-lg {
   .navbar .navbar-nav .list-group .list-group-item .title__list-group:active {
     color: #000;
   }
-  .dropdown-menu {
+  .navbar .dropdown-menu {
     min-width: 450px;
     background-color: #ffffff;
   }
-  .dropdown-menu .list-group li {
+  .navbar .dropdown-menu .list-group li {
     background-color: #ffffff;
   }
 }

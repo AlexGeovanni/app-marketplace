@@ -10,6 +10,7 @@ import PageCartShop from "../pages/page_cart-shop";
 import PageDetail from "../pages/page_detail";
 import PageCategory from "../pages/page_category";
 import PageProfile from "../pages/page_profile";
+import PageDashboard from "../pages/page_dashboard";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/detail" element={<PageDetail />} />
           <Route path="/ropa/:id" element={<PageCategory />} />
           <Route path="/profile" element={<PageProfile />} />
+          <Route path="/dashboard" element={<PageDashboard />} />
         </Routes>
       </Router>
     </>

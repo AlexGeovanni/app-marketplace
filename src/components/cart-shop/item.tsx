@@ -2,19 +2,30 @@ import { toast } from "sonner";
 import { CountItem } from "../../hooks/custom-count";
 import ControlStock from "./control-stock";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
+import { removeFromCart } from "../../redux/features/cartSlice";
 
-export default function Item() {
-  const text = "Acme Wireless Headphones";
-  const { handleCouterAdd, handleCouterRemove,handleOnChange, count } =CountItem();
-  const price: number = 99;
+export interface PropsI{
+  item: {
+    id: number
+    name: string
+    url: string
+    price: number
+    quantity:number
+  };
+}
 
+export default function Item({item}:PropsI) {
+  const {id,quantity} = item;
+  const {handleCouterIncre,handleCouterDecre,handleBlur,handleOnChange,count } =CountItem(id,quantity);
+  const Dispatch=useAppDispatch()
   return (
     <>
       <div className="item-card mb-1">
         <div className=" gap-1 d-flex align-items-center justify-content-between ">
           <Link to={"/detail"} className="img__item-card cp">
             <img
-              src="https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900"
+              src={item.url}
               alt=""
               width={100}
               height={100}
@@ -22,26 +33,29 @@ export default function Item() {
           </Link>
           <div className="info__item-card me-auto mb-auto">
             <Link to={"/detail"} className="text-decoration-none text-black">
-              <span className=" cp ">{text}</span>
+              <span className=" cp ">{item.name}</span>
             </Link>
           </div>
 
           <ControlStock
-            handleCouterAdd={handleCouterAdd}
-            handleCouterRemove={handleCouterRemove}
+            handleCouterIncre={handleCouterIncre}
+            handleCouterDecre={handleCouterDecre}
+            handleBlur={handleBlur}
             handleOnChange={handleOnChange}
             count={count}
           />
         </div>
         <div className="p-2  pe-0 d-flex justify-content-between align-items-center">
-          <p className="m-0">${ price * count}MXN</p>
+          <p className="m-0">${ item.price * item.quantity}MXN</p>
           <div>
             <button
               className="btn-delete border-0 fw-semibold rounded text-danger "
               onClick={() => {
                 toast.success("Producto eliminado", {
-                  description: text,
+                  description: item.name,
+                  
                 });
+                Dispatch(removeFromCart(item))
               }}
             >
               Quitar

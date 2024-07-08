@@ -2,18 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import CardProduct from "../card-product/card";
+import CustomResize from "../../hooks/custom-resize";
 export default function OffProduct() {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  }, []);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  };
+  const {width}= CustomResize()
 
   const product = [
     {

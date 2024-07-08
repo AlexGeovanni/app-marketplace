@@ -121,12 +121,13 @@
         }
       }
     }
-  }
-  .dropdown-menu {
-    min-width: 450px;
-    background-color: #ffffff;
-    .list-group li {
+    .dropdown-menu {
+      min-width: 450px;
       background-color: #ffffff;
+      .list-group li {
+        background-color: #ffffff;
+      }
     }
   }
+  
 }
