@@ -2,7 +2,7 @@
 interface Props extends React.HTMLAttributes<HTMLInputElement>{
   text:string
   name:string
-  selectedCheckbox:number
+  selectedCheckbox:number | null
   handleCheckboxChange:(index:number)=>void;
   numberOfCheck:number
 }
