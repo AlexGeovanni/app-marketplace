@@ -1,47 +1,14 @@
+import { handleFilterBrand, handleFilterSizes } from "../../redux/features/filterSlice";
+import { useAppSelector } from "../../redux/hooks";
 import AccordionBody from "./Box/accordion-body";
 
 export interface ArraysTypes{
-  title: string;
-  value: number;
+  [key :string]:boolean
 }
 export default function AccordionModal() {
-
-  const arraySizes:ArraysTypes[] =[
-    {
-      title: "S",
-      value: 1,
-    },
-    {
-      title: "M",
-      value: 2,
-    },
-    {
-      title: "L",
-      value: 3,
-    },
-    {
-      title: "XL",
-      value: 4,
-    }
-  ]
-  const arrayBrad:ArraysTypes[]=[
-    {
-      title: "Nike",
-      value: 1,
-    },
-    {
-      title: "Adidas",
-      value: 2,
-    },
-    {
-      title: "Puma",
-      value: 3,
-    },
-    {
-      title: "Reebok",
-      value: 4,
-    }
-  ]
+  
+  const {BRAND,SIZES}=useAppSelector((state)=>state.filterProduct)
+  
 
   return (
     <>
@@ -63,7 +30,7 @@ export default function AccordionModal() {
             id="panelsStayOpen-collapseOne"
             className="accordion-collapse collapse"
           >
-            <AccordionBody array={arraySizes} name="CheckboxBusiness" />
+            <AccordionBody array={SIZES} name="CheckboxSizes" handleDispatch={handleFilterSizes} />
           </div>
         </div>
         <div className="accordion-item border-0 border-bottom rounded-0">
@@ -83,7 +50,7 @@ export default function AccordionModal() {
             id="panelsStayOpen-collapseTwo"
             className="accordion-collapse collapse"
           >
-            <AccordionBody array={arrayBrad} name="CheckboxBrad" />
+            <AccordionBody array={BRAND} name="CheckboxBrad" handleDispatch={handleFilterBrand} />
           </div>
         </div>
         {/* 

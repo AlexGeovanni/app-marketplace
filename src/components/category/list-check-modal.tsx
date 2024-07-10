@@ -32,8 +32,7 @@ export default function ListChecksModal({id}:Props) {
       label: "Precio: Menor a Mayor"
     }
   ]
-
-  console.log(selectedCheckbox);
+  
   return (
     <>
       <ul className="list-group gap-1">

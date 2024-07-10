@@ -8,41 +8,60 @@ import CustomResize from "../../hooks/custom-resize";
 export default function OffProduct() {
   const {width}= CustomResize()
 
-  const product = [
+  const data = [
     {
       id: 1,
       name: "Gorra1",
-      off: "15",
+      brand: "Nike",
+      size: "S",
+      category: "hombre",
+      price: 100,
+      off: 10,
     },
     {
-      id: 1,
+      id: 2,
       name: "Gorra2",
-      off: "15",
+      brand: "Adidas",
+      size: "S",
+      category: "hombre",
+      price: 120,
+      off: 5,
     },
     {
-      id: 1,
+      id: 3,
       name: "Gorra3",
-      off: "15",
+      size: "M",
+      brand: "Puma",
+      category: "hombre",
+      price: 150,
+      off: 20,
     },
     {
-      id: 1,
+      id: 4,
       name: "Gorra4",
-      off: "15",
+      size: "L",
+      brand: "Reebok",
+      category: "hombre",
+      price: 180,
+      off: 30,
     },
     {
-      id: 1,
+      id: 5,
       name: "Gorra5",
-      off: "15",
+      size: "L",
+      brand: "Puma",
+      category: "hombre",
+      price: 180,
+      off: 30,
     },
     {
-      id: 1,
+      id: 6,
       name: "Gorra6",
-      off: "15",
-    },
-    {
-      id: 1,
-      name: "Gorra7",
-      off: "15",
+      size: "S",
+      brand: "Nike",
+      category: "hombre",
+      price: 180,
+      off: 15,
     },
   ];
   //   slidesPerView={width <768 ? 2 : width < 992 && width >= 768? 3 : 5}
@@ -64,11 +83,11 @@ export default function OffProduct() {
               modules={[Pagination, Navigation]}
               className="mySwiper "
             >
-              {product.map((item) => {
+              {data.map((product,i) => {
                 return (
-                  <SwiperSlide key={item.name}>
+                  <SwiperSlide key={i}>
                     <div className="card-p">
-                      <CardProduct name={item.name} />
+                      <CardProduct product={product} />
                     </div>
                   </SwiperSlide>
                 );

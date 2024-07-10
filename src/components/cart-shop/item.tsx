@@ -49,7 +49,7 @@ export default function Item({item}:PropsI) {
           <p className="m-0">${ item.price * item.quantity}MXN</p>
           <div>
             <button
-              className="btn-delete border-0 fw-semibold rounded text-danger "
+              className="btn-delete border-0 fw-semibold text-danger bg-transparent"
               onClick={() => {
                 toast.success("Producto eliminado", {
                   description: item.name,

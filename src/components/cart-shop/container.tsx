@@ -7,7 +7,7 @@ export default function Container() {
   const data = useAppSelector((state) => state.cart);
 
   const cantidad = data.length;
-  const total_price= data.reduce((acc, item) => { return acc + item.price * item.quantity},0)
+  const total_price= data.reduce((acc:number, item: { price: number; quantity: number; }) => { return acc + item.price * item.quantity},0)
   
   // console.log(data)
   return (
@@ -16,8 +16,8 @@ export default function Container() {
         {cantidad == 0 ? (
           <EmptyCart />
         ) : (
-          data.map((item)=>{
-            return <Item key={item.id} item={item}/>;
+          data.map((item: { id: number; name: string; url: string; price: number; quantity: number; },i:number)=>{
+            return <Item key={i} item={item}/>;
           })
         )}
       </div>
