@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { PropsAut } from "../../Types";
-import InputBox from "../box-input/input";
+import InputBox from "../box-input-float/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SingUpUserSchema, TSingUpUserSchema } from "../../validations/UserSchema";
 

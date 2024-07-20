@@ -1,7 +1,7 @@
 import { PropsAut } from "../../Types";
-import InputBox from "../box-input/input";
+import { LoginSchema, TLoginSchema } from "../../validations/UserSchema";
+import InputBox from "../box-input-float/input";
 
-import { LoginSchema,TLoginSchema } from "../../validations/UserSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm} from  "react-hook-form"
 

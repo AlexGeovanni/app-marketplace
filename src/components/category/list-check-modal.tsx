@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { PriceMayor } from "../../redux/features/dataSlice";
 //import CustomFilterCheckbox from "../../hooks/custom-filter-check";
 
 interface Props extends React.HTMLAttributes<HTMLInputElement>{
@@ -14,9 +16,11 @@ export default function ListChecksModal({id}:Props) {
   
   const [selectedCheckbox, setSelectedCheckbox] = useState<string|null>("all");
 
+  const Dispatch=useAppDispatch()
  
   const handleCheckboxChange = (index: string) => {
     setSelectedCheckbox(index);
+    Dispatch(PriceMayor())
   };
   const items:Items[]=[
     {

@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { PropsAut } from "../../Types";
-import { Address, SingUpBusinesSchema, TSingUpBusinesSchema } from "../../validations/UserSchema";
-import InputBox from "../box-input/input";
+
+import InputBox from "../box-input-float/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+import { Address, SingUpBusinesSchema, TSingUpBusinesSchema } from "../../validations/UserSchema";
 
 export default function FormSingupBusiness({ changeForm }: PropsAut) {
 
