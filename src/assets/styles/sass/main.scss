@@ -131,7 +131,7 @@ body {
       margin: 0;
     }
     input[type="number"] {
-      -moz-appearance: textfield;
+      --moz-appearance: textfield;
     }
 
     input[type="date"]::-webkit-inner-spin-button,
@@ -140,7 +140,7 @@ body {
       margin: 0;
     }
     input[type="date"] {
-      -moz-appearance: textfield;
+     --moz-appearance: textfield;
     }
 
   }

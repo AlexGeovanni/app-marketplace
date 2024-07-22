@@ -1,63 +1,62 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../redux/hooks";
-import { PriceMayor } from "../../redux/features/dataSlice";
+import { UnknownAction } from "@reduxjs/toolkit";
+import BoxRadio from "./Box/box-radio";
+import { PriceMayor,PriceMenor,OrderAZ } from "../../redux/features/dataSlice";
 //import CustomFilterCheckbox from "../../hooks/custom-filter-check";
 
-interface Props extends React.HTMLAttributes<HTMLInputElement>{
-  
+interface Props extends React.HTMLAttributes<HTMLInputElement> {}
+
+interface Items {
+  value: string;
+  label: string;
+  order:()=>UnknownAction
 }
 
-interface Items{
-  value:string;
-  label:string;
-}
+export default function ListChecksModal({ id }: Props) {
+  const [selectedCheckbox, setSelectedCheckbox] = useState<string >("");
 
-export default function ListChecksModal({id}:Props) {
-  
-  const [selectedCheckbox, setSelectedCheckbox] = useState<string|null>("all");
+  const Dispatch = useAppDispatch();
 
-  const Dispatch=useAppDispatch()
- 
-  const handleCheckboxChange = (index: string) => {
+  const handleCheckboxChange = (
+    index: string,
+    DispatchOrder:()=> UnknownAction
+  ):void => {
     setSelectedCheckbox(index);
-    Dispatch(PriceMayor())
+    Dispatch(DispatchOrder());
   };
-  const items:Items[]=[
+  const items: Items[] = [
     {
-      value:"all",
-      label: "Todos"
+      value:"normal",
+      label: " A-Z",
+      order:OrderAZ // No action needed for this case, just a placeholder for the price prop. You can replace it with your own logic.
     },
     {
-      value:"desc",
-      label: "Precio: Mayor a Menor"
+      value: "desc",
+      label: " Mayor a Menor",
+      order:PriceMayor
     },
     {
-      value:"asc",
-      label: "Precio: Menor a Mayor"
-    }
-  ]
-  
+      value: "asc",
+      label: "Menor a Mayor",
+      order: PriceMenor
+    },
+  ];
+
   return (
     <>
       <ul className="list-group gap-1">
-        {
-          items.map((item, index) => (
-            <li key={index} className="list-group-item border-0 ">
-              <input
-                className="form-check-input me-1 border-secondary"
-                type="radio"
-                name={`listGroupRadio${id}`}	
-                value={item.value}
-                id={`firstRadio${id}${index}`}
-                checked={selectedCheckbox == item.value}
-                onChange={(e) => handleCheckboxChange(e.target.value)}
-              />
-              <label className="form-check-label" htmlFor={`firstRadio${id}${index}`}>
-                {item.label}
-              </label>
-            </li>
-          ))
-        }
+        {items.map((item, index) => (
+          <BoxRadio
+            selectedCheckbox={selectedCheckbox}
+            handleCheckboxChange={handleCheckboxChange}
+            key={index}
+            value={item.value}
+            label={item.label}
+            id={id}
+            dispatch={item.order}
+          />
+        ))}
       </ul>
     </>
   );

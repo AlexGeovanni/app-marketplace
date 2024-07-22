@@ -11,26 +11,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const data=[
     {
-        id:1,
-        url:"https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
-        name:"Producto 1",
-        price:100,
+        id: 1,
+        name: "Playera",
+        url:"https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",   
+        price: 189,
         quantity:1
-    },
-    {
-        id:2,
-        name:"Producto 2",
-        url:"https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
-        price:200,
-        quantity:1
-    },
-    {
-        id:3,
-        name:"Producto 3",
-        url:"https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
-        price:300,
-        quantity:1
-    }
+      }
 ]
 
 export const cartProductSlice= createSlice({

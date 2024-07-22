@@ -60,20 +60,7 @@
     font-size: 14px;
   }
 
-  .title__list-group {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 5px;
-      right: 14px;
-      left: 16px;
-      width: calc(100% - 40px);
-      height: 1px;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-  }
+
 }
 
 .bg-scroll-down {
@@ -108,15 +95,7 @@
             background-color: rgb(213, 213, 213);
           }
           & .dropdown-item:active {
-            background-color: rgb(104, 102, 102);
-          }
-          & .title__list-group {
-            &:hover {
-              background-color: transparent;
-            }
-            &:active {
-              color: #000;
-            }
+            background-color: rgb(104, 102, 102)  ;
           }
         }
       }

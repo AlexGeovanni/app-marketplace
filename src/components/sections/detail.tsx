@@ -1,13 +1,23 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { Toaster, toast } from "sonner";
 
 import img from "../../assets/imgs/man-clothes.jpeg";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useParams } from "react-router-dom";
+import { Product } from "../../redux/features/dataSlice";
+import { addToCart } from "../../redux/features/cartSlice";
 
 export default function Detail() {
-  const [option, setOption] = useState("");
+  const {data}=useAppSelector((state)=>state.dataSlice)
+  const Dispatch= useAppDispatch();
+  const {id}= useParams()
 
+  //const [option, setOption] = useState("");
   const cantidad = 5;
+  const product:Product = data.find((p: { id: string | undefined; })=> p.id == id)
 
+  const off = Math.round((product.price * product.off) / 100);
+  const name = `${product.name} ${product.brand} de ${product.gender} color ${product.color}`
   return (
     <>
       <section className="details">
@@ -21,14 +31,14 @@ export default function Detail() {
             <div className="col-12 col-lg-6 mt-4 mt-lg-0 p-0 ps-lg-5  ">
               <div className="info__details mb-4  ">
                 <h3 className="fw-normal lh-1 my-3 mt-lg-0">
-                  {"Name the product asasassas sasasas"}
+                  {product.name + " "+ product.brand}
                 </h3>
                 <div>
                   <p className=" fw-semibold m-0">
                     <span className="text-danger text-decoration-line-through fw-normal">
-                      $MXN300
+                      $MXN{product.price}
                     </span>
-                    $MXN{200}
+                    $MXN{product.price - off}
                   </p>
                 </div>
 
@@ -37,18 +47,18 @@ export default function Detail() {
                   {cantidad}
                 </div>
                 <div>
-                  <span className="fw-light">Color</span>: {"red"}
+                  <span className="fw-light">Color</span>: {product.color}
                 </div>
                 <div className="mt-2">
-                  <p className="fw-light mb-1">Tamaño:</p>
-                  <select
+                  <p className="fw-light mb-1">Tamaño: {product.size}</p>
+                  {/* <select
                     className="w-100 form-select"
                     value={option}
                     onChange={(e) => setOption(e.target.value)}
                     aria-label="Default select example"
                   >
                     <option hidden>Seleciona una opción</option>
-                  </select>
+                  </select> */}
                 </div>
               </div>
               <div className="bg-dark bg-opacity-10 rounded p-3 mb-4">
@@ -61,7 +71,10 @@ export default function Detail() {
                 <button
                   className="btn rounded  btn-primary w-100 mt-3 py-2 "
                   onClick={() => {
-                    toast("Producto agregado ", {});
+                    toast.success("Producto agregado!!",{
+                      description:name
+                    });
+                    Dispatch(addToCart({id,name,url:product.url,price:(product.price - off),quantity:1}))
                   }}
                 >
                   AGREGAR AL CARRITO
@@ -80,7 +93,7 @@ export default function Detail() {
           </div>
         </div>
       </section>
-      <Toaster visibleToasts={2} duration={1000} />
+      <Toaster visibleToasts={2} duration={1000} richColors />
     </>
   );
 }

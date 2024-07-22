@@ -23,7 +23,7 @@ export default function Item({item}:PropsI) {
     <>
       <div className="item-card mb-1">
         <div className=" gap-1 d-flex align-items-center justify-content-between ">
-          <Link to={"/detail"} className="img__item-card cp">
+          <Link to={`/detail/${id}`} className="img__item-card cp">
             <img
               src={item.url}
               alt=""
@@ -32,7 +32,7 @@ export default function Item({item}:PropsI) {
             />
           </Link>
           <div className="info__item-card me-auto mb-auto">
-            <Link to={"/detail"} className="text-decoration-none text-black">
+            <Link to={`/detail/${id}`} className="text-decoration-none text-black">
               <span className=" cp ">{item.name}</span>
             </Link>
           </div>

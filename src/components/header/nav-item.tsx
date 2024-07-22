@@ -1,22 +1,31 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SubItem from "./sub-item";
 
 export default function NavItem() {
+  const ClassLink = " nav-link px-3 px-lg-2 ";
+
   return (
     <ul className="navbar-nav  justify-content-start  flex-grow-1 ">
-      <Link to={"/"} className="nav-item  m-0 mx-lg-2 text-decoration-none">
-        <span className="nav-link px-3 px-lg-2" aria-current="page">
+      <li className="nav-item m-0 mx-lg-2 ">
+        <NavLink
+          to={"/"}
+          className={({ isActive }: { isActive: boolean }): string =>
+            (isActive ? "fw-bold" : "") + ClassLink
+          }
+        >
           Inicio
-        </span>
-      </Link>
-      <li className="nav-item    d-none d-lg-block m-0 mx-lg-2 dropdown">
-        <span className="nav-link px-3 px-lg-0 dropdown-toggle" >
+        </NavLink>
+      </li>
+      <li className="nav-item d-none d-lg-block m-0 mx-lg-2 dropdown">
+        <span className="cp nav-link px-3 px-lg-0 dropdown-toggle">
           Categorias
         </span>
         <div className="dropdown-menu rounded-0 mt-0 p-0">
           <SubItem />
         </div>
       </li>
+
+{/* Item que solo funciona para movil ya que abre el canva de categorria */}
       <li
         className="navbar-toggler nav-item cp p-0 d-flex d-lg-none justify-content-between align-items-center  border-0"
         data-bs-toggle="offcanvas"
@@ -39,18 +48,16 @@ export default function NavItem() {
           />
         </svg>
       </li>
-
-      <li className="nav-item   m-0 mx-lg-2">
-        <a className="nav-link px-3 px-lg-0" href="#">
-          Ayuda
-        </a>
+      <li className="nav-item  m-0 mx-lg-2">
+        <NavLink
+          to={"/dashboard"}
+          className={({ isActive }: { isActive: boolean }): string =>
+            (isActive ? "fw-bold" : "") + ClassLink
+          }
+        >
+          Dashboard
+        </NavLink>
       </li>
-      <Link
-        to={"/dashboard"}
-        className="nav-item  m-0 mx-lg-2 text-decoration-none"
-      >
-        <span className="nav-link px-3 px-lg-0">Dashboard</span>
-      </Link>
     </ul>
   );
 }

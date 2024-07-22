@@ -11896,20 +11896,6 @@ textarea.form-control-lg {
   padding-left: 16px;
   font-size: 14px;
 }
-.body-canvas > div .title__list-group {
-  position: relative;
-}
-.body-canvas > div .title__list-group::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  right: 14px;
-  left: 16px;
-  width: calc(100% - 40px);
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
 
 .bg-scroll-down {
   background-color: #ffffff;
@@ -11941,12 +11927,6 @@ textarea.form-control-lg {
   }
   .navbar .navbar-nav .list-group .list-group-item .dropdown-item:active {
     background-color: rgb(104, 102, 102);
-  }
-  .navbar .navbar-nav .list-group .list-group-item .title__list-group:hover {
-    background-color: transparent;
-  }
-  .navbar .navbar-nav .list-group .list-group-item .title__list-group:active {
-    color: #000;
   }
   .navbar .dropdown-menu {
     min-width: 450px;

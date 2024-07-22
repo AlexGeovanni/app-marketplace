@@ -2,23 +2,14 @@ import { useParams } from "react-router-dom";
 import CardProduct from "../card-product/card";
 import HeaderCategory from "../category/header-category";
 import { useAppSelector } from "../../redux/hooks";
+import { Product } from "../../redux/features/dataSlice";
 
-interface CardProduct {
-  id: number;
-  name: string;
-  brand: string;
-  size: string;
-  category: string;
-  price: number;
-  off: number;
-}
 
 export default function Category() {
   const { id } = useParams();
 
-const { BRAND,SIZES}=useAppSelector((state)=>state.filterProduct)
-const {data}=useAppSelector((state)=>state.dataSlice)
-
+  const { BRAND,SIZES}=useAppSelector((state)=>state.filterProduct)
+  const {data}=useAppSelector((state)=>state.dataSlice)
 
   const isAnyFilterApplied = (filterObj: { [key: string]: boolean }) =>
     Object.values(filterObj).some((value) => value);
@@ -26,11 +17,12 @@ const {data}=useAppSelector((state)=>state.dataSlice)
   // const filteredProducts = data.filter((product) => 
   //   (Object.keys(BRAND).every((brand)=> !BRAND[brand]) && Object.keys(SIZES).every((size)=> !SIZES[size])) ||
   //   (Object.keys(BRAND).some((brand)=> BRAND[brand] && product.brand === brand) || Object.keys(SIZES).some((size)=> SIZES[size] && product.size === size)));
-  const filteredProducts:CardProduct[] = data.filter((product:CardProduct)=>{
+  const filteredProducts:Product[] = data.filter((product:Product)=>{
     const isSizeFiltered = !isAnyFilterApplied(SIZES) || SIZES[product.size];
     const isBrandFiltered = !isAnyFilterApplied(BRAND) || BRAND[product.brand];
+    const isGenderFiltered = product.gender.toLocaleLowerCase() == id;
 
-    return isSizeFiltered && isBrandFiltered;
+    return isSizeFiltered && isBrandFiltered && isGenderFiltered
   })
 
   
@@ -39,7 +31,8 @@ const {data}=useAppSelector((state)=>state.dataSlice)
       <section className="">
         <div className="category-body">
           <div className="container-w p-3 px-lg-4">
-            <h2 className="fs-4 m-0">Ropa solo para {id}</h2>
+            <h2 className="fs-4 ">Ropa solo para {id}</h2>
+            <p className="m-0">Producto en lista {filteredProducts.length}</p>
           </div>
           <HeaderCategory />
           <div className="container-w p-3 px-lg-4container__category-body ">
