@@ -52,7 +52,7 @@
 // popular categories
 .container-popular {
     & .card-popular {
-      max-height: 350px;
+      width: 100%;
       & p{
         font-size: 18px;
         bottom: 12px !important;
@@ -164,6 +164,9 @@
 @media screen and (min-width: 768px) {
   .home-main-seccions{
     height: 85vh;
+    & .card-popular {
+      max-height: 350px;
+    }
   }
 }
 

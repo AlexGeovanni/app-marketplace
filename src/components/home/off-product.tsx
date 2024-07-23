@@ -105,7 +105,7 @@ export default function OffProduct() {
     <>
       <section className="">
         <div className="container-w p-3 px-lg-4 ">
-          <h2 className="fw-normal fs-4 m-0 mb-3 ">REBAJAS</h2>
+          <h2 className="fw-normal fs-4 m-0 mb-3 text-center ">REBAJAS</h2>
           <div className=" ">
             <Swiper
               slidesPerView={

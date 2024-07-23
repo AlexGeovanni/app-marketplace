@@ -36,7 +36,7 @@
       background-color: #000000;
       color: #fff;
       letter-spacing: 1px;
-      padding: 8px 0;
+      padding: 8px 12px;
 
       &:hover {
         background-color: #171717;
@@ -96,5 +96,17 @@
       transition: opacity 0.3s ease-in-out;
     }
   }
+}
 
+@media screen and (min-width: 991px) {
+  .card-p {
+
+  
+    .btn-shop {
+      & button.btn{
+        width: 100%;
+        }
+  
+    }
+  }
 }

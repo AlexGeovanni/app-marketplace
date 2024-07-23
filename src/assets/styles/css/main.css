@@ -11998,7 +11998,7 @@ textarea.form-control-lg {
 }
 
 .container-popular .card-popular {
-  max-height: 350px;
+  width: 100%;
 }
 .container-popular .card-popular p {
   font-size: 18px;
@@ -12093,6 +12093,9 @@ textarea.form-control-lg {
   .home-main-seccions {
     height: 85vh;
   }
+  .home-main-seccions .card-popular {
+    max-height: 350px;
+  }
 }
 @media screen and (min-width: 992px) {
   .home-main-seccions {
@@ -12131,7 +12134,7 @@ textarea.form-control-lg {
   background-color: #000000;
   color: #fff;
   letter-spacing: 1px;
-  padding: 8px 0;
+  padding: 8px 12px;
 }
 .card-p .btn-shop button.btn:hover {
   background-color: #171717;
@@ -12179,6 +12182,11 @@ textarea.form-control-lg {
   .card-p:hover .btn-shop {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+  }
+}
+@media screen and (min-width: 991px) {
+  .card-p .btn-shop button.btn {
+    width: 100%;
   }
 }
 .footer-container {
@@ -12292,7 +12300,7 @@ body {
   margin: 0;
 }
 .item-card .control-stock input[type=number] {
-  -moz-appearance: textfield;
+  --moz-appearance: textfield;
 }
 .item-card .control-stock input[type=date]::-webkit-inner-spin-button,
 .item-card .control-stock input[type=date]::-webkit-outer-spin-button {
@@ -12300,7 +12308,7 @@ body {
   margin: 0;
 }
 .item-card .control-stock input[type=date] {
-  -moz-appearance: textfield;
+  --moz-appearance: textfield;
 }
 
 @media screen and (min-width: 768px) {

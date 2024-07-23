@@ -33,7 +33,7 @@ export default function CardProduct({ product }: Props) {
         </Link>
       </div>
       <div className="btn-shop">
-        <button className="btn w-100  fw-light">
+        <button className="btn  fw-light">
           Comprar ahora
         </button>
       </div>
