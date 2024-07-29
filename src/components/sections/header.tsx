@@ -1,78 +1,76 @@
 import { Link } from "react-router-dom";
-import IconBuger from "../header/icon-buger";
-import NavBar from "../header/navbar";
 import SubItem from "../header/sub-item";
 import { useEffect, useState } from "react";
+import MenuBurgerIcon from "../header/icon-buger";
+import BodyCanvas from "../header/body-canvas";
 
 export default function Header() {
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    if (scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    scrollTop > 0 ? setIsScrolled(true) : setIsScrolled(false);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      <nav className={`navbar navbar-expand-lg navbar-dak sticky-top   ${isScrolled? "bg-scroll-down shado":""} `}>
+      <nav
+        className={`navbar navbar-expand-lg navbar-dak sticky-top   ${
+          isScrolled ? "bg-scroll-down shado" : ""
+        } `}
+      >
         <div className="px-1 p-2 px-lg-3 w-100 d-flex justify-content-between">
           <a className="navbar-brand " href="#">
             LOGO APP
           </a>
-          <IconBuger />
+          <MenuBurgerIcon />
+
           <div
             className="offcanvas offcanvas-start"
             tabIndex={-1}
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
+            id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel"
           >
-            <div className="offcanvas-header justify-content-end">
-              <div
-                className="cp offcanvas-close"
+            <div className="offcanvas-header">
+              <button
+                type="button"
+                className="btn-close"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
-              >
-                Cerrar
-              </div>
+              ></button>
             </div>
-            <NavBar />
+            <BodyCanvas />
           </div>
+
           <div
-            className="offcanvas offcanvas-start d-lg-none"
+            className="d-lg-none offcanvas-lg offcanvas-start"
             tabIndex={-1}
-            id="offcanvasSubNavbar"
-            aria-labelledby="offcanvasSubNavbarLabel"
+            id="offcanvasResponsive"
+            aria-labelledby="offcanvasResponsiveLabel"
           >
-            <div className="offcanvas-header justify-content-end">
-              <div
-                className="cp offcanvas-close"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar"
-                aria-label="Toggle navigation"
-              >
-                Cerrar
-              </div>
-              
+            <div className="offcanvas-header">
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#offcanvasResponsive"
+                aria-label="Close"
+              ></button>
             </div>
-            <div className="body-canvas ">
-                <div>
-                  <SubItem />
-                </div>
+            <div className="offcanvas-body p-0 body-canvas">
+              <div className="">
+                <SubItem />
               </div>
+            </div>
           </div>
+
           <div className=" d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
             <div>
               <Link to={"/cart"} className="text-decoration-none text-black">

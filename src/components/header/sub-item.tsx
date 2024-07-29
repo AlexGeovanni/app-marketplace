@@ -1,54 +1,73 @@
 import { NavLink } from "react-router-dom";
 
+interface SubLinks {
+  category: string
+  title: string
+  path: string
+}
+
 export default function SubItem() {
-  const ClassLink = " dropdown-item";
+  const CATEGORY: string[] = ["electronic", "clothes"];
+  const SUB_ITEMS:SubLinks[] = [
+    {
+      category: "electronic",
+      title: "Electronicos",
+      path: "/electronicos",
+    },
+    {
+      category: "clothes",
+      title: "Hombre",
+      path: "/ropa/hombre",
+    },
+    {
+      category: "clothes",
+      title: "Mujer",
+      path: "/ropa/mujer",
+    },
+    {
+      category: "clothes",
+      title: "kids",
+      path: "/ropa/kids",
+    },
+  ];
 
   return (
     <>
-      <ul className="list-group  rounded-0 p-0 ">
-        <li className="list-group-item p-0 border-0">
-          <a className="dropdown-item " href="#">
-            Electronicos
-          </a>
-        </li>
-      </ul>
-      <ul className="list-group w-100 rounded-0 p-0 ">
-        <li className="list-group-item p-0 border-0">
-          <a className="dropdown-item pb-0  fw-semibold" href="#">
-            ROPA
-          </a>
-        </li>
-        <li className="list-group-item p-0 border-0">
-          <NavLink
-            to={"/ropa/hombre"}
-            className={({ isActive }: { isActive: boolean }): string =>
-              (isActive ? "fw-semibold " : "") + ClassLink
-            }
-          >
-            Hombre
-          </NavLink>
-        </li>
-        <li className="list-group-item p-0 border-0">
-          <NavLink
-            to={"/ropa/mujer"}
-            className={({ isActive }: { isActive: boolean }): string =>
-              (isActive ? "fw-semibold " : "") + ClassLink
-            }
-          >
-            Mujer
-          </NavLink>
-        </li>
-        <li className="list-group-item p-0 border-0">
-          <NavLink
-            to={"/ropa/kids"}
-            className={({ isActive }: { isActive: boolean }): string =>
-              (isActive ? "fw-semibold " : "") + ClassLink
-            }
-          >
-            Kids
-          </NavLink>
-        </li>
-      </ul>
+      {CATEGORY.map((item, i) => (
+        <UlComponent
+          key={i}
+          items={SUB_ITEMS.filter((items) => item === items.category)}
+        />
+      ))}
     </>
   );
 }
+
+
+interface Props {
+  items: SubLinks[];
+}
+const UlComponent = ({ items }: Props) => {
+  const ClassLink = "dropdown-item ";
+  return (
+    <ul className="list-group rounded-0 p-0 ">
+      {items.map((item, index) => (
+        <li
+          key={index}
+          className="list-group-item p-0  border-0"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#offcanvasResponsive"
+        >
+          <NavLink
+            to={item.path}
+            className={({ isActive }: { isActive: boolean }): string =>
+              (isActive ? "fw-semibold " : "dropdown-item ") + ClassLink
+            }
+          >
+            {item.title}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
+  );
+};

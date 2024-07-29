@@ -11856,11 +11856,11 @@ textarea.form-control-lg {
   width: 100%;
 }
 .navbar .navbar-nav .nav-item .bi-arrow-right {
-  transform: translateX(0);
+  transform: translateX(-5px);
   transition: transform 0.2s ease-in-out;
 }
 .navbar .navbar-nav .nav-item:hover .bi-arrow-right {
-  transform: translateX(5px);
+  transform: translateX(0px);
   transition: transform 0.3s ease-in-out;
 }
 .navbar .navbar-nav .nav-link {
@@ -11873,7 +11873,7 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   background-color: #d6d6d6;
-  margin-top: 0;
+  margin-top: 0px;
 }
 .dropdown-menu ul {
   width: 100%;
@@ -11958,11 +11958,13 @@ textarea.form-control-lg {
 }
 .home-main-seccions {
   margin-top: -75px;
-  height: 70vh;
+  min-height: 70vh;
+  height: 80vh;
   background-size: auto;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(255, 255, 255, 0) 75%), url("../../imgs/pixel.jpg");
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(255, 255, 255, 0) 75%), url("../../imgs/pixel.webp");
   background-size: cover;
-  background-position: top;
+  background-repeat: no-repeat;
+  background-position: 40% 100%;
 }
 .home-main-seccions > div {
   height: 100%;
@@ -12092,6 +12094,7 @@ textarea.form-control-lg {
 @media screen and (min-width: 768px) {
   .home-main-seccions {
     height: 85vh;
+    background-position: 100% 10%;
   }
   .home-main-seccions .card-popular {
     max-height: 350px;
@@ -12134,7 +12137,6 @@ textarea.form-control-lg {
   background-color: #000000;
   color: #fff;
   letter-spacing: 1px;
-  padding: 8px 12px;
 }
 .card-p .btn-shop button.btn:hover {
   background-color: #171717;

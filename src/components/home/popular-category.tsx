@@ -5,7 +5,7 @@ import sale from "../../assets/imgs/sale.jpeg";
 export default function PopularCategorys() {
   return (
     <>
-      <section className="container-popular border-top pt-4">
+      <section className="container-popular border-top pt-4 mb-3 mb-md-5">
         <div className="container-w p-1 px-md-3 px-lg-4 ">
           <h2 className="fs-4 m-0 mb-2 text-center">Lo que te puede interesar</h2>
           <div className="row g-2 mt-1 ">

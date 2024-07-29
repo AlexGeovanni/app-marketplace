@@ -18,14 +18,14 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route path="*" element={<PageHome />} />
-          <Route path="/" element={<PageHome />} />
-          <Route path="/auth" element={<PageAuth />} />
-          <Route path="/cart" element={<PageCartShop />} />
-          <Route path="/detail/:id" element={<PageDetail />} />
-          <Route path="/ropa/:id" element={<PageCategory />} />
-          <Route path="/profile" element={<PageProfile />} />
-          <Route path="/dashboard" element={<PageDashboard />} />
+          <Route  path="*" element={<PageHome />} />
+          <Route  path="/" element={<PageHome />} />
+          <Route  path="/auth" element={<PageAuth />} />
+          <Route  path="/cart" element={<PageCartShop />} />
+          <Route  path="/detail/:id" element={<PageDetail />} />
+          <Route  path="/ropa/:id" element={<PageCategory />} />
+          <Route  path="/profile" element={<PageProfile />} />
+          <Route  path="/dashboard" element={<PageDashboard />} />
         </Routes>
       </Router>
     </>

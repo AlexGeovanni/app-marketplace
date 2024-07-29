@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import { Toaster, toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 import img from "../../assets/imgs/man-clothes.jpeg";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -11,9 +12,10 @@ export default function Detail() {
   const {data}=useAppSelector((state)=>state.dataSlice)
   const Dispatch= useAppDispatch();
   const {id}= useParams()
+  const redirect = useNavigate()
 
   //const [option, setOption] = useState("");
-  const cantidad = 5;
+  const cantidad = 1;
   const product:Product = data.find((p: { id: string | undefined; })=> p.id == id)
 
   const off = Math.round((product.price * product.off) / 100);
@@ -72,7 +74,13 @@ export default function Detail() {
                   className="btn rounded  btn-primary w-100 mt-3 py-2 "
                   onClick={() => {
                     toast.success("Producto agregado!!",{
-                      description:name
+                      description:name,
+                      action:{
+                        label:"ver carrito",
+                        onClick: () => {
+                          redirect("/cart");
+                        }
+                      }
                     });
                     Dispatch(addToCart({id,name,url:product.url,price:(product.price - off),quantity:1}))
                   }}

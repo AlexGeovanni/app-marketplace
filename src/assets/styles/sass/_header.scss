@@ -10,11 +10,11 @@
     .nav-item {
       width: 100%;
       & .bi-arrow-right {
-        transform: translateX(0);
+        transform: translateX(-5px);
         transition: transform 0.2s ease-in-out;
       }
       &:hover .bi-arrow-right {
-        transform: translateX(5px);
+        transform: translateX(0px);
         transition: transform 0.3s ease-in-out;
       }
     }
@@ -32,7 +32,7 @@
 // dropdown menu items
 .dropdown-menu {
   background-color: #d6d6d6;
-  margin-top: 0;
+  margin-top: 0px;
   & ul {
     width: 100%;
   }
@@ -59,8 +59,6 @@
     //text-transform: uppercase;
     font-size: 14px;
   }
-
-
 }
 
 .bg-scroll-down {

@@ -3,6 +3,7 @@ import CardProduct from "../card-product/card";
 import HeaderCategory from "../category/header-category";
 import { useAppSelector } from "../../redux/hooks";
 import { Product } from "../../redux/features/dataSlice";
+import { Toaster } from "sonner";
 
 
 export default function Category() {
@@ -20,12 +21,11 @@ export default function Category() {
   const filteredProducts:Product[] = data.filter((product:Product)=>{
     const isSizeFiltered = !isAnyFilterApplied(SIZES) || SIZES[product.size];
     const isBrandFiltered = !isAnyFilterApplied(BRAND) || BRAND[product.brand];
-    const isGenderFiltered = product.gender.toLocaleLowerCase() == id;
+    const isGenderFiltered = product.gender.toLocaleLowerCase() === id;
 
     return isSizeFiltered && isBrandFiltered && isGenderFiltered
   })
 
-  
   return (
     <>
       <section className="">
@@ -50,6 +50,7 @@ export default function Category() {
           </div>
         </div>
       </section>
+      <Toaster visibleToasts={2} duration={2000}  />
     </>
   );
 }

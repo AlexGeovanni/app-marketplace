@@ -10,7 +10,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const data = [
   {
-    id: 1,
+    id:1 ,
     name: "Playera",
     url: "https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
     price: 189,

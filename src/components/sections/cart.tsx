@@ -2,10 +2,6 @@ import { Toaster } from "sonner";
 import Container from "../cart-shop/container";
 
 export default function CartShop() {
-  /**
-   * mejorar en la parte de item especialmente en la de quitar producto
-   *
-   */
   return (
     <>
       <section className="">

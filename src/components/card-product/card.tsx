@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import img1 from "../../assets/imgs/man-clothes.jpeg";
 import { Product } from "../../redux/features/dataSlice";
+import { toast } from "sonner";
+import { useAppDispatch } from "../../redux/hooks";
+import { addToCart } from "../../redux/features/cartSlice";
 interface Props  {
   product:Product
 }
 
 export default function CardProduct({ product }: Props) {
 
+  const Dispatch = useAppDispatch()
 
   const off = Math.round((product.price * product.off) / 100);
-
+  const fullNameProduct:string = `${product.name}  ${product.brand} para ${product.gender}`
   return (
     <>
       <Link to={`/detail/${product.id}`} className="card-img">
@@ -19,7 +23,7 @@ export default function CardProduct({ product }: Props) {
         <Link to={`/detail/${product.id}`} className=" text-decoration-none m-0">
           <div>
             <p className="title__information text-truncate m-0 fw-light">
-              {product.name +" " + product.brand +" para " + product.gender} 
+              {fullNameProduct} 
             </p>
           </div>
           <p className="price fw-bold m-0 ">
@@ -33,10 +37,17 @@ export default function CardProduct({ product }: Props) {
         </Link>
       </div>
       <div className="btn-shop">
-        <button className="btn  fw-light">
-          Comprar ahora
+        <button className="btn py-1 py-lg-2 fw-light"
+        onClick={()=>{toast.success(`se ha agredado  correctamente!`,{
+          description:fullNameProduct
+        })
+        Dispatch(addToCart({id:product.id,name:fullNameProduct,url:product.url,price:(product.price - off),quantity:1}))
+      }}
+        >
+          Comprar 
         </button>
       </div>
+      
     </>
   );
 }

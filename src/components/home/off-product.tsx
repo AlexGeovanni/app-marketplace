@@ -5,14 +5,15 @@ import { Pagination, Navigation } from "swiper/modules";
 //import { useEffect, useState } from "react";
 import CardProduct from "../card-product/card";
 import CustomResize from "../../hooks/custom-resize";
+import { Toaster } from "sonner";
 export default function OffProduct() {
   const {width}= CustomResize()
 
   const data = [
     {
       id: 1,
-      off: 31,
-      name: "Playera",
+      off: 30,
+      name: "Playera xddd",
       url:"https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
       size: "M",
       brand: "Gucci",
@@ -98,12 +99,10 @@ export default function OffProduct() {
       gender: "Mujer"
     },
   ];
-  //   slidesPerView={width <768 ? 2 : width < 992 && width >= 768? 3 : 5}
-  //   spaceBetween={width <768 ? 6 :10}
 
   return (
     <>
-      <section className="">
+      <section className="mb-3 mb-md-5">
         <div className="container-w p-3 px-lg-4 ">
           <h2 className="fw-normal fs-4 m-0 mb-3 text-center ">REBAJAS</h2>
           <div className=" ">
@@ -111,25 +110,26 @@ export default function OffProduct() {
               slidesPerView={
                 width < 768 ? 2 : width < 992 && width >= 768 ? 2.2 : 3.6
               }
-              spaceBetween={width < 768 ? 6 : 18}
+              spaceBetween={width < 768 ? 8 : 18}
               loop={true}
               navigation={true}
               modules={[Pagination, Navigation]}
               className="mySwiper "
             >
-              {data.map((product,i) => {
-                return (
+              {data.map((product,i) => 
+                product.off > 0  && 
                   <SwiperSlide key={i}>
                     <div className="card-p">
                       <CardProduct product={product} />
                     </div>
                   </SwiperSlide>
-                );
-              })}
+                
+              )}
             </Swiper>
           </div>
         </div>
       </section>
+      <Toaster visibleToasts={2} duration={2000}  />
     </>
   );
 }
