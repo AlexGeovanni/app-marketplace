@@ -30,7 +30,7 @@ export default function Detail() {
                 <img className="w-100" src={img} alt="" />
               </div>
             </div>
-            <div className="col-12 col-lg-6 mt-4 mt-lg-0 p-0 ps-lg-5  ">
+            <div className="col-12 col-lg-6 mt-4 mt-lg-0 ps-lg-5  ">
               <div className="info__details mb-4  ">
                 <h3 className="fw-normal lh-1 my-3 mt-lg-0">
                   {product.name + " "+ product.brand}

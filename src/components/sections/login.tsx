@@ -1,9 +1,11 @@
+import { Toaster } from "sonner";
 import { PropsAut } from "../../Types";
 import FormLogin from "../auth/form-login";
 
 
 export default function Login({changeForm}:PropsAut) {
   return (
+    <>
     <section className="container-w p-3 px-lg-4">
       <div className="auth-account d-flex align-items-center justify-content-center ">
         <div className=" p-2 ">
@@ -14,5 +16,9 @@ export default function Login({changeForm}:PropsAut) {
         </div>
       </div>
     </section>
+    <Toaster 
+    visibleToasts={1} duration={2000} richColors
+    />
+    </>
   );
 }

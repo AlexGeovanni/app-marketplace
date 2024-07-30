@@ -13,7 +13,7 @@ export default function NavDashboard({nav_item,handleClick}:Props) {
   
   return (
     <>
-      <div className="position-sticky bg-dark " style={{ top: "72px" }}>
+      <div className="position-sticky bg-dark " style={{ top: "65px" }}>
         <nav className="container-w  p-2 px-lg-4">
           <ul className="nav nav-underline ">
           {

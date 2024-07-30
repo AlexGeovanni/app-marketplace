@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes,Navigate } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle';
@@ -11,12 +11,18 @@ import PageDetail from "../pages/page_detail";
 import PageCategory from "../pages/page_category";
 import PageProfile from "../pages/page_profile";
 import PageDashboard from "../pages/page_dashboard";
+import Header from "../components/sections/header";
+import { useAppSelector } from "../redux/hooks";
 
 function App() {
+
+  const {isLoggedIn} = useAppSelector((state)=> state.authUser)
+
   return (
     <>
       <Router>
         <ScrollToTop />
+        <Header />
         <Routes>
           <Route  path="*" element={<PageHome />} />
           <Route  path="/" element={<PageHome />} />
@@ -24,8 +30,8 @@ function App() {
           <Route  path="/cart" element={<PageCartShop />} />
           <Route  path="/detail/:id" element={<PageDetail />} />
           <Route  path="/ropa/:id" element={<PageCategory />} />
-          <Route  path="/profile" element={<PageProfile />} />
-          <Route  path="/dashboard" element={<PageDashboard />} />
+          <Route  path="/profile" element={isLoggedIn? <PageProfile />: <Navigate replace to={"/auth"} />} />
+          <Route  path="/dashboard" element={ isLoggedIn? <PageDashboard /> :<Navigate replace to={"/auth"} /> } />
         </Routes>
       </Router>
     </>

@@ -10,7 +10,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const data = [
   {
-    id:1 ,
+    id: 1,
     name: "Playera",
     url: "https://touchemexico.com/cdn/shop/products/Pantalon-PH30031-F.jpg?v=1671208900",
     price: 189,
@@ -41,9 +41,7 @@ export const cartProductSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       state.splice(
-        state.findIndex((product) => product.id === action.payload),
-        1
-      );
+        state.findIndex((product) => product.id === action.payload.id),1);
     },
   },
 });

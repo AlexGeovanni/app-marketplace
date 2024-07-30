@@ -35,8 +35,8 @@ export default function Category() {
             <p className="m-0">Producto en lista {filteredProducts.length}</p>
           </div>
           <HeaderCategory />
-          <div className="container-w p-3 px-lg-4container__category-body ">
-            <div className=" row g-2 ">
+          <div className="container-w p-3  px-lg-4container__category-body ">
+            <div className=" row g-2 gy-3 ">
               {filteredProducts.map((product,i) => {
                 return (
                   <div key={i} className="col-6 col-md-4 col-lg-3 container-card">

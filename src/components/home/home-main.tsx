@@ -7,7 +7,7 @@ export default function HomeMain() {
       <div className="container-w p-3 px-lg-4 d-flex flex-column justify-content-center  ">
         <div className="title__seccions  ">
           <h1 className="fw-bold">
-            Local makertplace <span className="text-primary">store</span>
+            Local markertplace <span className="r"  >store</span>
           </h1>
         </div>
         <div className="text-start text-white mt-5 ">

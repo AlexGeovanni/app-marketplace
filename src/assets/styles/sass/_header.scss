@@ -1,5 +1,7 @@
 .navbar {
   transition: all 0.3s ease-in-out;
+  min-height: 65px;
+  height: 100%;
 
   &:hover {
     background-color: #ffffff;

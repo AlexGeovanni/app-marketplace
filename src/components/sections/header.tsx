@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import SubItem from "../header/sub-item";
 import { useEffect, useState } from "react";
-import MenuBurgerIcon from "../header/icon-buger";
 import BodyCanvas from "../header/body-canvas";
+import BurgerIcon from "../icons/burgerIcon";
+import CartIcon from "../icons/cartIcon";
+import UserIcon from "../icons/userIcon";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,15 +24,15 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-dak sticky-top   ${
-          isScrolled ? "bg-scroll-down shado" : ""
+        className={`navbar navbar-expand-lg navbar-dak  sticky-top p-0   ${
+          isScrolled ? "bg-scroll-down shadow" : ""
         } `}
       >
-        <div className="px-1 p-2 px-lg-3 w-100 d-flex justify-content-between">
-          <a className="navbar-brand " href="#">
-            LOGO APP
+        <div className="w-100 d-flex justify-content-between align-items-center">
+          <a className="navbar-brand fw-bold  " href="#">
+            Markert
           </a>
-          <MenuBurgerIcon />
+          <BurgerIcon />
 
           <div
             className="offcanvas offcanvas-start"
@@ -71,33 +73,15 @@ export default function Header() {
             </div>
           </div>
 
-          <div className=" d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
+          <div className=" px-2 d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
             <div>
               <Link to={"/cart"} className="text-decoration-none text-black">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="27"
-                  height="27"
-                  fill="currentColor"
-                  className="bi bi-cart"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                </svg>
+                <CartIcon />
               </Link>
             </div>
             <div>
               <Link to={"/auth"} className="text-decoration-none text-black">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  fill="currentColor"
-                  className="bi bi-person"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                </svg>
+                <UserIcon />
               </Link>
             </div>
           </div>

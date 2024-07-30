@@ -2,8 +2,6 @@ import { useState } from "react";
 import Footer from "../components/sections/footer";
 import Login from "../components/sections/login";
 import SingUp from "../components/sections/sing-up";
-import Header from "../components/sections/header";
-
 
 export default function PageAuth(){
 
@@ -15,7 +13,6 @@ export default function PageAuth(){
 
     return(
         <>
-        <Header />
         {
             form?
             <Login changeForm={changeForm} />

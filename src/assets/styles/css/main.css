@@ -11847,6 +11847,8 @@ textarea.form-control-lg {
 }
 .navbar {
   transition: all 0.3s ease-in-out;
+  min-height: 65px;
+  height: 100%;
 }
 .navbar:hover {
   background-color: #ffffff;
@@ -12143,9 +12145,6 @@ textarea.form-control-lg {
   transition: background-color 0.3s ease-in-out;
 }
 
-.header__category-body {
-  border-bottom: 1px solid #ccc;
-}
 .header__category-body a {
   text-decoration: none;
 }
