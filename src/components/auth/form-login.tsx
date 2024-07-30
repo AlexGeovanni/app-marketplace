@@ -15,7 +15,7 @@ export default function FormLogin({ changeForm }: PropsAut) {
 
   const userStatic = {
     id: 1,
-    name: "Alex Geovanni",
+    name: "Dom torreto",
     role: "Administrador",
     email: "admin@locamarket.com",
     password: "admin123",
