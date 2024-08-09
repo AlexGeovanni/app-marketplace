@@ -2,6 +2,12 @@ import { Route, BrowserRouter as Router, Routes,Navigate } from "react-router-do
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle';
+import "../assets/styles/css/main.css"
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import PageHome from "../pages/page_home";
 import PageAuth from "../pages/page_auth";
@@ -18,6 +24,8 @@ function App() {
 
   const {isLoggedIn} = useAppSelector((state)=> state.authUser)
 
+
+
   return (
     <>
       <Router>
@@ -26,12 +34,12 @@ function App() {
         <Routes>
           <Route  path="*" element={<PageHome />} />
           <Route  path="/" element={<PageHome />} />
-          <Route  path="/auth" element={<PageAuth />} />
+          <Route  path="/auth" element={isLoggedIn? <Navigate replace to={"/"} /> :<PageAuth />} />
           <Route  path="/cart" element={<PageCartShop />} />
           <Route  path="/detail/:id" element={<PageDetail />} />
           <Route  path="/ropa/:id" element={<PageCategory />} />
           <Route  path="/profile" element={isLoggedIn? <PageProfile />: <Navigate replace to={"/auth"} />} />
-          <Route  path="/dashboard" element={ isLoggedIn? <PageDashboard /> :<Navigate replace to={"/auth"} /> } />
+          <Route  path="/dashboard" element={ isLoggedIn? <PageDashboard /> : <Navigate replace to={"/auth"} /> } />
         </Routes>
       </Router>
     </>

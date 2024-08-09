@@ -7,18 +7,22 @@ export default function Profile() {
   return (
     <>
       <section>
-        <div className="container-w p-3 px-lg-4 mb-4">
+        <div className="container-w p-3 px-lg-4 mb-4 ">
           <h1 className="fw-semibold fs-2 mb-4">Mi perfil</h1>
-          <div className="d-flex gap-4">
+          <div className="d-flex gap-4 mb-2">
             <ProfileIcon />
-            <div>
+            <div >
               <h3 className="fs-4 fw-bold m-0">{user.name}</h3>
               <p className="fs-6 fw-semibold text-muted">@{user.role}</p>
             </div>
           </div>
-          <div>
-            <h3 className="fs-5">Mas informacion</h3>
+          <div className="mb-2">
+            <h3 className="fs-5 ">Mas informacion</h3>
             <p>Correo:{user.email}</p>
+          </div>
+          <div className="btns__profile gap-2 d-flex justify-content-end">
+            <button className="btn btn-success " >Editar perfil</button>
+            <button className="btn btn-outline-danger">Cerrar sesiòn</button>
           </div>
         </div>
       </section>

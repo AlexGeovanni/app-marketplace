@@ -99,12 +99,24 @@
           }
         }
       }
+      .dropdown-menu {
+        min-width: 450px;
+        width: auto;
+        background-color: #ffffff;
+        .list-group li {
+          background-color: #ffffff;
+        }
+      }
     }
     .dropdown-menu {
-      min-width: 450px;
+      min-width: auto;
+      width: 100%;
       background-color: #ffffff;
-      .list-group li {
-        background-color: #ffffff;
+      text-decoration: none;
+      & li:hover{
+        cursor: pointer;
+        opacity: .8;
+        transition: all .3s ease-in-out;
       }
     }
   }

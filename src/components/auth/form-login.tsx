@@ -35,11 +35,11 @@ export default function FormLogin({ changeForm }: PropsAut) {
       userStatic.email == data.email &&
       userStatic.password == data.password
     ) {
-      Dispatch(login(userStatic));
       toast.success("Te has logeado correctamente!!",{
         description:userStatic.name
       })
       setTimeout(() => {
+        Dispatch(login(userStatic));
         navegate("/profile");
       }, 3000);
     }
@@ -70,7 +70,7 @@ export default function FormLogin({ changeForm }: PropsAut) {
       <div className=" px-1 form__btn">
         <button
           onClick={() => {
-            errors && toast.error("No se pudo login",{
+            errors && toast.error("No se pudo logear",{
               description:"Ingrese los datos correctamente"
             });
           }}

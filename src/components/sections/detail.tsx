@@ -2,7 +2,7 @@
 import { Toaster, toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
-import img from "../../assets/imgs/man-clothes.jpeg";
+import img from "../../assets/imgs/man-clothes.webp";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useParams } from "react-router-dom";
 import { Product } from "../../redux/features/dataSlice";
@@ -32,7 +32,7 @@ export default function Detail() {
             </div>
             <div className="col-12 col-lg-6 mt-4 mt-lg-0 ps-lg-5  ">
               <div className="info__details mb-4  ">
-                <h3 className="fw-normal lh-1 my-3 mt-lg-0">
+                <h3 className="fw-medium lh-1 my-3 mt-lg-0">
                   {product.name + " "+ product.brand}
                 </h3>
                 <div>
@@ -45,14 +45,14 @@ export default function Detail() {
                 </div>
 
                 <div>
-                  <span className="fw-light">Cantidad disponible</span>:{" "}
+                  <span className="">Cantidad disponible</span>:{" "}
                   {cantidad}
                 </div>
                 <div>
-                  <span className="fw-light">Color</span>: {product.color}
+                  <span className="">Color</span>: {product.color}
                 </div>
                 <div className="mt-2">
-                  <p className="fw-light mb-1">Tamaño: {product.size}</p>
+                  <p className="mb-1">Tamaño: {product.size}</p>
                   {/* <select
                     className="w-100 form-select"
                     value={option}
@@ -64,8 +64,8 @@ export default function Detail() {
                 </div>
               </div>
               <div className="bg-dark bg-opacity-10 rounded p-3 mb-4">
-                <p>Puntos de entregas</p>
-                <span className="fw-light">
+                <p className="fw-medium">Puntos de entregas</p>
+                <span >
                   Margaritas, plaza sendero, macroplaza, centro
                 </span>
               </div>

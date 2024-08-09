@@ -1,6 +1,6 @@
-import man from "../../assets/imgs/man-clothes.jpeg";
+import man from "../../assets/imgs/man-clothes.webp";
 import phone from "../../assets/imgs/phone-electronics.webp";
-import sale from "../../assets/imgs/sale.jpeg";
+import sale from "../../assets/imgs/sale.webp";
 
 export default function PopularCategorys() {
   return (

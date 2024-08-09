@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function BoxButtons() {
   return (
     <>
-      <div className="btns d-flex gap-2 align-items-center">
+      <div className="btns d-flex gap-2 justify-content-center align-items-center">
         <Link
           to={"/ropa/hombre"}
           className=" text-decoration-none text-decoration-underline text-white"

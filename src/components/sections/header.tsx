@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SubItem from "../header/sub-item";
 import { useEffect, useState } from "react";
 import BodyCanvas from "../header/body-canvas";
 import BurgerIcon from "../icons/burgerIcon";
 import CartIcon from "../icons/cartIcon";
 import UserIcon from "../icons/userIcon";
+import { useAppSelector } from "../../redux/hooks";
+import DownArrowIcon from "../icons/downIcon";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { isLoggedIn, user } = useAppSelector((state) => state.authUser);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -73,16 +77,41 @@ export default function Header() {
             </div>
           </div>
 
-          <div className=" px-2 d-flex m-0 ms-lg-3 gap-3 align-items-center justify-content-center">
+          <div className=" px-2 d-flex m-0 ms-lg-3 align-items-center justify-content-center">
             <div>
               <Link to={"/cart"} className="text-decoration-none text-black">
                 <CartIcon />
               </Link>
             </div>
-            <div>
-              <Link to={"/auth"} className="text-decoration-none text-black">
-                <UserIcon />
-              </Link>
+            <div className="dropdown position-relative  px-4">
+              {isLoggedIn && user ? (
+                <>
+                <div
+                  className=" cp d-flex align-items-center gap-2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <UserIcon />
+                  <span className="d-none d-md-block">
+                    Perfil <DownArrowIcon />{" "}
+                  </span>
+                </div>
+                <ul className="dropdown-menu  p-0   rounded-0 ">
+                    <li>
+                      <NavLink to={"/profile"} className="dropdown-item fw-semibold  " >
+                        Perfil
+                      </NavLink>
+                    </li>
+                      <li>
+                        <a className=" dropdown-item fw-semibold text-danger" >Cerrar sesión</a>
+                      </li>
+                  </ul>
+                </>
+              ) : (
+                <Link to={"/auth"} className="text-decoration-none text-black">
+                  <UserIcon />
+                </Link>
+              )}
             </div>
           </div>
         </div>

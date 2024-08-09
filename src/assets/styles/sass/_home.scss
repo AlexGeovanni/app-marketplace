@@ -5,28 +5,41 @@
   min-height: 70vh;
   height:80vh;
   background-size: auto;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(255, 255, 255, 0) 75%),
+  background-image: linear-gradient(to top, rgba(0, 0, 0,.8) 20%, rgba(255, 255, 255, 0) 100%),
   url("../../imgs/pixel.webp");
   background-size:cover;
   background-repeat: no-repeat;
-  background-position: 40% 100% ;
+  background-position: 60% 20% ;
 
   & > div {
     height: 100%;
     & .title__seccions {
       & h1{
         text-align: center;
+        text-transform: uppercase;
+        text-wrap:wrap ;
         color: #ffffff;
-        font-size: clamp(3.6rem, 11vw, 132px);
+        font-size: clamp(2.4rem, 10vw, 100px);
         line-height: .8em;
-        & span{font-size: clamp(2.4rem, 8vw, 110px);
-        }
       }
     }
+    & .subtitle__seccions {
+      & h3{
+        text-align: center;
+        text-wrap:wrap ;
+        color: #ffffff;
+        font-size: clamp(1rem, 6vw, 28px);
+        line-height: 1em;
+      }
 
+      & p{
+        font-size: 14px;
+      }
+      
+    }
     & .btns{
       & button {
-        padding: 11px 30px ;
+        padding: 10px 30px ;
         color: #ffffff;
         border: 1px solid #ffffff;
         &:active{
@@ -165,8 +178,16 @@
 
 @media screen and (min-width: 768px) {
   .home-main-seccions{
-    height: 85vh;
-    background-position: 100% 10%;
+    height: 80vh;
+    // background-position: 100% 10%;
+    & div {
+      & .subtitle__seccions {
+        & p{
+          font-size: 16px;
+        }
+        
+      }
+    }
     & .card-popular {
       max-height: 350px;
     }
@@ -175,6 +196,6 @@
 
 @media screen and (min-width: 992px){
   .home-main-seccions{
-    height: 95vh;
+   height: 95vh;
   }
 }

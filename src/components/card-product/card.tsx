@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img1 from "../../assets/imgs/man-clothes.jpeg";
+import img1 from "../../assets/imgs/man-clothes.webp";
 import { Product } from "../../redux/features/dataSlice";
 import { toast } from "sonner";
 import { useAppDispatch } from "../../redux/hooks";
@@ -24,7 +24,7 @@ export default function CardProduct({ product }: Props) {
           className=" text-decoration-none m-0"
         >
           <div>
-            <p className="title__information text-truncate m-0 fw-light">
+            <p className="title__information text-truncate m-0 ">
               {name}
             </p>
           </div>

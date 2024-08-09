@@ -14,13 +14,13 @@ export default function Navbar() {
         <NavLink
           to={"/"}
           className={({ isActive }: { isActive: boolean }): string =>
-            (isActive ? "fw-bold " : "") + ClassLink
+            (isActive ? "fw-semibold " : "") + ClassLink
           }
         >
           Inicio
         </NavLink>
       </li>
-      <li className="nav-item d-none d-lg-block m-0 mx-lg-2 dropdown">
+      <li className="toggle-category nav-item d-none d-lg-block m-0 mx-lg-2 dropdown">
         <span className="cp nav-link px-3 px-lg-0 py-0 dropdown-toggle">
           Categorias
         </span>
@@ -46,7 +46,7 @@ export default function Navbar() {
           <NavLink
             to={"/dashboard"}
             className={({ isActive }: { isActive: boolean }): string =>
-              (isActive ? "fw-bold" : "") + ClassLink
+              (isActive ? "fw-semibold" : "") + ClassLink
             }
           >
             Dashboard

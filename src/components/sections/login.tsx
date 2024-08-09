@@ -18,6 +18,7 @@ export default function Login({changeForm}:PropsAut) {
     </section>
     <Toaster 
     visibleToasts={1} duration={2000} richColors
+    position="top-center"
     />
     </>
   );
