@@ -9,8 +9,8 @@ export default function HomeMain() {
             Markertplace 
           </h1>
         </div>
-        <div className="subtitle__seccions text-center text-white py-3 py-lg-4 ">
-          <h3>Descubre los mejores productos</h3>
+        <div className="subtitle__seccions text-center  py-3 py-lg-4 ">
+          <h2>Descubre los mejores productos</h2>
           <p>Encuentra todo lo que necesitas en un solo lugar.</p>
           <BoxButtons />
         </div>

@@ -28,7 +28,7 @@ export default function CardProduct({ product }: Props) {
               {name}
             </p>
           </div>
-          <p className="price fw-bold m-0 ">
+          <p className="price fw-semibold m-0 ">
             {product.off > 0 && (
               <span className="text-danger text-decoration-line-through fw-normal me-1">
                 ${product.price}MXN

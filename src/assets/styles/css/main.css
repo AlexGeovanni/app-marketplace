@@ -11855,6 +11855,7 @@ textarea.form-control-lg {
   transition: all 0.3s ease-in-out;
 }
 .navbar .navbar-nav .nav-item {
+  font-size: 14px;
   width: 100%;
 }
 .navbar .navbar-nav .nav-item .bi-arrow-right {
@@ -11867,10 +11868,9 @@ textarea.form-control-lg {
 }
 .navbar .navbar-nav .nav-link {
   letter-spacing: 0.5px;
-  font-size: 14px;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: #000;
+  color: #000000;
 }
 
 .dropdown-menu {
@@ -11915,14 +11915,10 @@ textarea.form-control-lg {
     width: auto;
   }
   .navbar .navbar-nav .nav-link {
-    font-size: 15px;
     padding-top: 8px;
     padding-bottom: 8px;
     border: none;
     transition: color 0.6s ease-in-out;
-  }
-  .navbar .navbar-nav .list-group .list-group-item {
-    font-size: 13px;
   }
   .navbar .navbar-nav .list-group .list-group-item .dropdown-item:hover {
     background-color: rgb(213, 213, 213);
@@ -11958,8 +11954,14 @@ textarea.form-control-lg {
 }
 .auth-account > div form .form__btn button.btn {
   padding: 10px;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 1px;
+}
+.auth-account .title__auth-account h1, .auth-account .title__auth-account .h1 {
+  font-size: clamp(1.2rem, 5vw, 24px);
+}
+.auth-account p {
+  font-size: 14px;
 }
 
 @media screen and (min-width: 768px) {
@@ -11970,10 +11972,16 @@ textarea.form-control-lg {
     max-width: 490px;
   }
 }
+.sub_title {
+  color: #000000;
+  font-size: 24px;
+}
+
 .home-main-seccions {
   margin-top: -75px;
+  margin: auto;
   min-height: 70vh;
-  height: 80vh;
+  height: 75vh;
   background-size: auto;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 20%, rgba(255, 255, 255, 0) 100%), url("../../imgs/pixel.webp");
   background-size: cover;
@@ -11988,45 +11996,51 @@ textarea.form-control-lg {
   text-transform: uppercase;
   text-wrap: wrap;
   color: #ffffff;
-  font-size: clamp(2.4rem, 10vw, 100px);
+  font-size: clamp(2.4rem, 8vw, 85px);
   line-height: 0.8em;
+}
+.home-main-seccions > div .subtitle__seccions {
+  color: #ffffff;
 }
 .home-main-seccions > div .subtitle__seccions h3, .home-main-seccions > div .subtitle__seccions .h3 {
   text-align: center;
   text-wrap: wrap;
-  color: #ffffff;
-  font-size: clamp(1rem, 6vw, 28px);
+  font-size: clamp(1.1rem, 6vw, 28px);
   line-height: 1em;
 }
 .home-main-seccions > div .subtitle__seccions p {
-  font-size: 14px;
+  font-size: 16px;
 }
-.home-main-seccions > div .btns button {
-  padding: 10px 30px;
+.home-main-seccions > div .btns .btn-register {
   color: #ffffff;
+  padding: 10px 30px;
   border: 1px solid #ffffff;
 }
-.home-main-seccions > div .btns button:active {
+.home-main-seccions > div .btns .btn-register:active {
   transition: all 0.3s ease-in-out;
   background-color: rgba(255, 255, 255, 0.138);
   color: #ffffff;
 }
-.home-main-seccions > div .btns button.btn-shop {
+.home-main-seccions > div .btns .btn-shop {
+  color: #ffffff;
   border: 1px solid transparent;
 }
-.home-main-seccions > div .btns button.btn-shop:hover {
+.home-main-seccions > div .btns .btn-shop:hover {
   text-decoration: underline;
 }
-.home-main-seccions > div .btns button.btn-shop:active {
+.home-main-seccions > div .btns .btn-shop:active {
   background-color: transparent;
   color: #ffffff;
 }
 
+.container-popular {
+  color: #ffffff;
+}
 .container-popular .card-popular {
   width: 100%;
 }
 .container-popular .card-popular p {
-  font-size: 18px;
+  font-size: 22px;
   bottom: 12px !important;
 }
 .container-popular .card-popular img {
@@ -12086,33 +12100,6 @@ textarea.form-control-lg {
 .mySwiper .swiper-button-next {
   right: 1px;
 }
-.mySwiper .card-carousel {
-  min-width: 120px;
-  overflow: hidden;
-}
-.mySwiper .card-carousel .card-img {
-  min-height: 130px;
-}
-.mySwiper .card-carousel .card-img img {
-  width: 100%;
-  aspect-ratio: 3/2.9;
-  object-fit: cover;
-}
-.mySwiper .card-carousel .information__card-carousel .title {
-  font-size: 18px;
-  color: #000000;
-}
-.mySwiper .card-carousel .information__card-carousel .price {
-  font-size: 18px;
-}
-.mySwiper .card-carousel .information__card-carousel .price span {
-  font-size: 16px;
-}
-.mySwiper .card-carousel .information__card-carousel .btn {
-  white-space: nowrap;
-  font-size: 14px;
-  padding: 5px 8px;
-}
 
 @media screen and (min-width: 768px) {
   .home-main-seccions {
@@ -12123,11 +12110,6 @@ textarea.form-control-lg {
   }
   .home-main-seccions .card-popular {
     max-height: 350px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .home-main-seccions {
-    height: 95vh;
   }
 }
 .row > .container-card {
@@ -12155,12 +12137,12 @@ textarea.form-control-lg {
   color: #000000;
 }
 .card-p .information__card .price span {
-  font-size: 12px;
+  font-size: 14px;
 }
 .card-p .btn-shop button.btn {
   font-size: 12px;
   background-color: #000000;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 .card-p .btn-shop button.btn:hover {
@@ -12191,13 +12173,6 @@ textarea.form-control-lg {
   }
   .card-p .information__card:hover .title__information, .card-p .information__card:hover .price span {
     opacity: 0.6;
-  }
-  .card-p .information__card .title__information, .card-p .information__card .price {
-    font-size: 14px;
-    color: #000000;
-  }
-  .card-p .information__card .price span {
-    font-size: 12px;
   }
   .card-p .btn-shop {
     opacity: 0;

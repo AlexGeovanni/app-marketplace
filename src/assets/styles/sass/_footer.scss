@@ -1,16 +1,17 @@
+@use 'variables.scss';
 
 .footer-container{
     background-color: #020202;
-    color: #ffffff;
+    color: variables.$text-color-white;
 
     & .information__footer-container{
         & div p{
-            font-size: 14px;
+            font-size: variables.$font-base;
         }
     }
     & .copy__footer-container{
         & p{
-            font-size: 14px;
+            font-size: variables.$font-base;
         }
     }
 }

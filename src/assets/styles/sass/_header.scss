@@ -1,3 +1,6 @@
+@use 'variables.scss';
+
+
 .navbar {
   transition: all 0.3s ease-in-out;
   min-height: 65px;
@@ -10,6 +13,7 @@
 
   .navbar-nav {
     .nav-item {
+      font-size: variables.$font-base;
       width: 100%;
       & .bi-arrow-right {
         transform: translateX(-5px);
@@ -23,10 +27,9 @@
     .nav-link {
       //text-transform: uppercase;
       letter-spacing: 0.5px;
-      font-size: 14px;
       padding-top: 15px;
       padding-bottom: 15px;
-      color: #000;
+      color: variables.$text-color-black;
     }
   }
 }
@@ -44,8 +47,8 @@
   & ul .dropdown-item {
     padding-top: 12px;
     padding-bottom: 12px;
-    color: #000000;
-    font-size: 14px;
+    color: variables.$text-color-black;
+    font-size: variables.$font-base;
     //text-transform: uppercase;
   }
 }
@@ -59,7 +62,7 @@
     padding: 14px;
     padding-left: 16px;
     //text-transform: uppercase;
-    font-size: 14px;
+    font-size: variables.$font-base;
   }
 }
 
@@ -82,7 +85,6 @@
         width: auto;
       }
       .nav-link {
-        font-size: 15px;
         padding-top: 8px;
         padding-bottom: 8px;
         border: none;
@@ -90,7 +92,6 @@
       }
       .list-group {
         .list-group-item {
-          font-size: 13px;
           & .dropdown-item:hover {
             background-color: rgb(213, 213, 213);
           }

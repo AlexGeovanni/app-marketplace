@@ -67,7 +67,7 @@ export default function FormLogin({ changeForm }: PropsAut) {
           />
         </div>
       </div>
-      <div className=" px-1 form__btn">
+      <div className="form__btn">
         <button
           onClick={() => {
             errors && toast.error("No se pudo logear",{
@@ -81,12 +81,12 @@ export default function FormLogin({ changeForm }: PropsAut) {
           ENTRAR
         </button>
       </div>
-      <div className="p-2 mt-2 text-center">
-        <span>¿No tienes cuenta aun? </span>
-        <a onClick={changeForm} href="#" className="">
-          Crear una cuenta
+      <p className="py-2">
+        ¿No tienes cuenta aun? 
+        <a onClick={changeForm} className=" ms-1 fw-semibold">
+          Crear cuenta
         </a>
-      </div>
+      </p>
     </form>
   );
 }

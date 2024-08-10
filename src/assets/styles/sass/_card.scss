@@ -1,3 +1,5 @@
+@use 'variables.scss';
+
 .row > .container-card{
   height: 100%;
 }
@@ -22,19 +24,19 @@
     }
 
     .title__information,.price {
-      font-size: 14px;
-      color: #000000;
+      font-size: variables.$font-base;
+      color: variables.$text-color-black;
     }
     .price span {
-        font-size: 12px;
+        font-size: variables.$font-base;
       }
   }
 
   .btn-shop {
     & button.btn{
-      font-size: 12px;
+      font-size: variables.$font-small;
       background-color: #000000;
-      color: #fff;
+      color: variables.$text-color-white;
       letter-spacing: 1px;
 
       &:hover {
@@ -75,14 +77,6 @@
       &:hover .price span {
         opacity: 0.6;
       }
-  
-      .title__information,.price {
-        font-size: 14px;
-        color: #000000;
-      }
-      .price span {
-          font-size: 12px;
-        }
     }
   
     .btn-shop {
@@ -98,7 +92,6 @@
 
 @media screen and (min-width: 991px) {
   .card-p {
-
   
     .btn-shop {
       & button.btn{

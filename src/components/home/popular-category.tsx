@@ -7,12 +7,12 @@ export default function PopularCategorys() {
     <>
       <section className="container-popular border-top pt-4 mb-3 mb-md-5">
         <div className="container-w p-1 px-md-3 px-lg-4 ">
-          <h2 className="fs-4 m-0 mb-2 text-center">Lo que te puede interesar</h2>
+          <h2 className="sub_title m-0 mb-2 text-center">Lo que te puede interesar</h2>
           <div className="row g-2 mt-1 ">
             <div className=" col- col-md-4 px-0 px-md-1 ">
               <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={man} alt="" />
-                <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
+                <p className=" m-0 ps-2 text-center fw-semibold  position-absolute bottom-0 start-0 z-1">
                   Ropa de hombre
                 </p>
               </div>
@@ -20,7 +20,7 @@ export default function PopularCategorys() {
             <div className=" col- col-md-4 px-0 px-md-1 ">
               <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={phone} alt="" />
-                <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
+                <p className=" m-0 ps-2 text-center fw-semibold  position-absolute bottom-0 start-0 z-1">
                   Celular
                 </p>
               </div>
@@ -28,7 +28,7 @@ export default function PopularCategorys() {
             <div className=" col- col-md-4 px-0 px-md-1 ">
               <div className="cp card-popular d-flex flex-column align-items-center  overflow-hidden position-relative">
                 <img className="" src={sale} alt="" />
-                <p className=" m-0 ps-2 text-center fw-bold text-white position-absolute bottom-0 start-0 z-1">
+                <p className=" m-0 ps-2 text-center fw-semibold  position-absolute bottom-0 start-0 z-1">
                   Empezar a vender
                 </p>
               </div>

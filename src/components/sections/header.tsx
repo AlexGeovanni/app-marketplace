@@ -33,9 +33,9 @@ export default function Header() {
         } `}
       >
         <div className="w-100 d-flex justify-content-between align-items-center">
-          <a className="navbar-brand fw-bold  " href="#">
+          {/* <a className="navbar-brand fw-bold  " href="#">
             Markert
-          </a>
+          </a> */}
           <BurgerIcon />
 
           <div
